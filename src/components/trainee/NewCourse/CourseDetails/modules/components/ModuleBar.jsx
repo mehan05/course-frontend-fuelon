@@ -12,11 +12,11 @@ const ModuleBar = ({ handleModuleChange, modules }) => {
 
   return (
     <div>
-      <div className="border-2 border-gray-600 rounded-md p-1 w-full max-w-4xl mx-auto mb-3">
+      <div className="border-2 border-gray-600 rounded-md  w-full max-w-4xl mx-auto mb-3">
         {modules.map((module, index) => (
           <div key={index}>
-            <div className='flex justify-between p-3'>
-              <p className='text-xl font-semibold'>{module.title || `Module ${index + 1}`}</p>
+            <div className='flex justify-between p-3   bg-gray-300 '>
+              <p className='text-xl   font-semibold'>{module.title || `Module ${index + 1}`}</p>
               <button
                 className="bg-gray-300 hover:bg-violet-500 font-bold py-1 px-2 rounded-md text-black text-xl m-1"
                 onClick={() => handleToggle(index)}

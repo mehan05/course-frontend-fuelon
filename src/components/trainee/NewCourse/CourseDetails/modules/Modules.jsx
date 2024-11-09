@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ModuleBar from './components/ModuleBar';
+import { Link } from 'react-router-dom';
 
 const Modules = () => {
   const [modules, setModules] = useState([]);
@@ -53,6 +54,10 @@ const Modules = () => {
           </div>
           :<div></div>
         }
+        <div className='fixed bottom-14 right-28'>
+             <Link to=" " className='bg-[#5072F5]  hover:bg-[#8aa0f6] font-bold py-1 px-7 rounded-md text-black text-xl'>Next</Link>
+
+        </div>
     </div>
   );
 }
