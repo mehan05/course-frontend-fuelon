@@ -1,11 +1,20 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar';
 import TraineeNavbar from '../../trainee/components/TraineeNavbar/TraineeNavbar';
+import { useLocation } from 'react-router-dom';
+import StudentNavBar from '../../student/components/SrudentNavbar/StudentNavBar';
 
 function Landing() {
+  const location = useLocation();
   return (
     <div>
-      <TraineeNavbar />
+      { location.pathname.startsWith("/trainee")?(
+        <TraineeNavbar />
+):(
+    <StudentNavBar/>
+)
+
+      }
       <div className="w-full bg-gray-200 px-8 py-20 flex flex-col md:flex-row items-center justify-between font-poppins">
         <div className="md:w-1/2 text-left pl-8">
           <h1 className="text-5xl font-semibold text-gray-800 font-poppins">
