@@ -6,7 +6,7 @@ import Student from './components/student/Student';
 
 function App() {
   return (
-    <div className="m-0 p-0 w-full">
+    <div className="m-5">
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/trainee/*' element={<Trainee />} />  
