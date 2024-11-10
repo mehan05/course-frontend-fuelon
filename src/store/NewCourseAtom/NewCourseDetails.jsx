@@ -31,3 +31,17 @@ export const ModuleData = atom({
         }
     ],
 })
+
+// export const BestSellingCourse = atom({
+//     key: "BestSellingCourse",
+//     default:[
+//         {
+//             id: 0,
+//             image: '', 
+//             title: '',
+//             publishDate: '',
+//             price: '',
+//             enrolled: '',
+//           }
+//     ]
+// })

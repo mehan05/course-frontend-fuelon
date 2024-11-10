@@ -9,10 +9,10 @@ import AdminPage from './AdminPage/AdminPage'
 const Trainee = () => {
   return (
 
-    <div>
+    <div className='p-10'>
     <Routes>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/trainne/mycourses' element={<MyCourses/>}/> 
+        <Route path='/trainnee/mycourses' element={<MyCourses/>}/> 
         <Route path="/trainee/newcourse" element={<NewCourse/>}>
               <Route path='course_1' element={<CoursDetails/>}/>
               <Route path='course_1/modules' element={<Modules/>}/>
