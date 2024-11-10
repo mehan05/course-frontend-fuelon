@@ -1,5 +1,6 @@
 import React from 'react';
 import ProgressBar from '../../components/Progressbar';
+import { Link } from 'react-router-dom';
 
 const CoursDetails = () => {
   return (
@@ -66,9 +67,10 @@ const CoursDetails = () => {
           </label>
           <input type="file" id="image-upload" className="hidden" />
         </div>
-            <button className='bg-violet-500 p-2 rounded-lg font-semibold w-[100px] min-h-[10px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 hover:duration-300'>
+        
+            <Link to="modules"  className='fixed bottom-4 right-4  bg-violet-500 p-2 rounded-lg font-semibold w-[100px] min-h-[10px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 hover:duration-300'>
                 Next
-            </button>
+            </Link  >
       </form>
     </div>
   );

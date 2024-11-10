@@ -2,6 +2,7 @@ import React from 'react';
 import DetailsCard from './components/DetailsCard';
 import BestSellingCourse from './components/BestSellingCourse';
 import ChartComponents from './components/ChartComponents';
+import TraineeNavbar from '../components/TraineeNavbar/TraineeNavbar';
 
 const up_arrow = "/salesup-arrow.png";
 const rupee_icon = "/rupee-icon.png";
@@ -11,9 +12,9 @@ const review_icon = "/review-icon.png";
 
 const AdminPage = () => {
   return (
-    <div className="m-0 p-0 w-full">
-      <div className="border-2 border-violet-500">
-        NavBar
+    <div className="m-4">
+      <div className=" border-violet-500">
+        <TraineeNavbar/>
       </div>
 
       <div className="flex justify-start items-center mt-3">

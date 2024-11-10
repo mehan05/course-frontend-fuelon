@@ -1,10 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+import TraineeNavbar from '../components/TraineeNavbar/TraineeNavbar'
 const NewCourse = () => {
   return (
     <div>
-            <div className="border-2 w-full m-8">
-                    <h1>Nav bar</h1>
+            <div className=" m-8">
+                    <TraineeNavbar/>
             </div >
             <div>
                 <Outlet/>

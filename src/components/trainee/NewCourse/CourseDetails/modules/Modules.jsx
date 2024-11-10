@@ -55,7 +55,7 @@ const Modules = () => {
           :<div></div>
         }
         <div className='fixed bottom-14 right-28'>
-             <Link to="/level" className='bg-[#5072F5]  hover:bg-[#8aa0f6] font-bold py-1 px-7 rounded-md text-black text-xl'>Next</Link>
+             <Link to="levels" className='bg-[#5072F5]  hover:bg-[#8aa0f6] font-bold py-1 px-7 rounded-md text-black text-xl'>Next</Link>
 
         </div>
     </div>

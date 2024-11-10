@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react"
 import CourseCards from "../components/CourseCards/CourseCards"
 import MyContext from "../../../context/context"
 import axios from "axios";
+import TraineeNavbar from "../components/TraineeNavbar/TraineeNavbar";
 
 const MyCourses = () => {
     const {courses,setCourses} = useContext(MyContext);
@@ -25,9 +26,9 @@ const MyCourses = () => {
     },[])
     console.log(courses);
   return (
-    <div>
-        <div className="border-2 w-full m-8">
-                    <h1>Nav bar</h1>
+    <div className="m-5">
+        <div className="  m-8">
+                    <TraineeNavbar/>
         </div >
         <div className=" flex justify-start">
             <h1 className=" font-semibold text-3xl text-[##161439]">
