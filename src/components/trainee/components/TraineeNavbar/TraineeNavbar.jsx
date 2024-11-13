@@ -5,8 +5,8 @@ const TraineeNavbar = () => {
     const location = useLocation();
     return (
         <nav className="bg-white">
-          <div className="px-4 py-6 flex items-center w-full">
-            <div className="flex gap-12">
+          <div className="px-4 py-6 flex items-center  w-full">
+            <div className="flex  flex-grow gap-12">
               <NavLink
                 to="/trainee/home"
                 className={({ isActive }) =>
@@ -25,7 +25,7 @@ const TraineeNavbar = () => {
               </NavLink>
             </div>
 
-            <div className="flex items-center justify-center relative min-w-[1000px] ml-5">
+            <div className="flex items-center justify-center relative min-w-[1100px] ml-5">
               <input
                 type="text"
                 placeholder="Search for Courses..."

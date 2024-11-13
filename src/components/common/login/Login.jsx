@@ -33,6 +33,7 @@ const Login = () => {
               <input
                 type="email"
                 id="email"
+                value="biyan12542@biowey.com"
                 className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="sahil@gmail.com"
                 required
@@ -44,6 +45,7 @@ const Login = () => {
               </label>
               <input
                 type="password"
+                value="12334345345"
                 id="password"
                 className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required

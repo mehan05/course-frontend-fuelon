@@ -29,8 +29,8 @@ const Course = () => {
     },[])
     console.log(courses);
   return (
-    <div className="m-5">
-        <div className="  m-8">
+    <div className=" m-2">
+        <div className="  mb-8">
                     <StudentNavBar/>
         </div >
        
