@@ -18,7 +18,7 @@ const AdminPage = () => {
       </div>
 
       <div className="flex justify-start items-center mt-3">
-        <h1 className="font-bold text-[36px] text-[#161439]">Hello Mehan</h1>
+        <h1 className="font-bold text-[36px] text-[#161439]">Hello User</h1>
       </div>
 
       <div className="flex gap-5 m-5 w-full h-40">

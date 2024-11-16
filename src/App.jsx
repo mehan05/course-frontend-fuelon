@@ -5,6 +5,7 @@ import Trainee from './components/trainee/Trainee';
 import Student from './components/student/Student';
 import QuestionPage from './components/student/questionpage/QuestionPage';
 import Remainders from './components/smallcomponents/Remainders'
+import CourseCards from './components/trainee/components/CourseCards/CourseCards';
 
 function App() {
   return (
