@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from '../../common/navbar/Navbar';
 
 const QuestionPage = () => {
   const [questions] = useState([
@@ -61,92 +62,97 @@ const QuestionPage = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen flex flex-col items-center font-sans" style={{ fontFamily: 'Poppins, sans-serif' }}>
-      <header className="w-full max-w-4xl px-6 py-4 flex flex-col items-start text-gray-800">
-        <div className="flex items-center space-x-2">
-          <span className="text-xl font-semibold">←</span>
-          <h1 className="text-xl font-bold">Assess Yourself</h1>
-        </div>
-        <p className="text-gray-500 mt-2">Complete the test now</p>
-      </header>
+    <div>
+        <Navbar />
+      <div className="bg-white  flex flex-col items-center justify-center font-sans" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        {/* Navbar */}
 
-      <div className="flex max-w-4xl w-full mt-8">
-        <div className="w-1/4 space-y-4">
-          <div className="p-4 border border-gray-200 rounded-lg text-center">
-            <h3 className="text-sm font-bold text-gray-500 uppercase">Title Of The Course</h3>
-            <p className="text-lg font-semibold text-gray-800 mt-1">Laravel</p>
+        <header className="w-full  px-6 py-4 flex flex-col items-start text-gray-800">
+          <div className="flex items-center space-x-2">
+            <span className="text-xl font-semibold">←</span>
+            <h1 className="text-xl font-bold">Assess Yourself</h1>
           </div>
-          <div className="p-4 border border-gray-200 rounded-lg text-center">
-            <h3 className="text-sm font-bold text-gray-500 uppercase">Time Left</h3>
-            <p className="text-lg font-semibold text-gray-800 mt-1">{formatTime(timeLeft)}</p>
+          <p className="text-gray-500 mt-2">Complete the test now</p>
+        </header>
+
+        <div className="flex  w-full mt-8">
+          <div className="w-1/4 space-y-4">
+            <div className="p-4 border border-gray-200 rounded-lg text-center">
+              <h3 className="text-sm font-bold text-gray-500 uppercase">Title Of The Course</h3>
+              <p className="text-lg font-semibold text-gray-800 mt-1">Laravel</p>
+            </div>
+            <div className="p-4 border border-gray-200 rounded-lg text-center">
+              <h3 className="text-sm font-bold text-gray-500 uppercase">Time Left</h3>
+              <p className="text-lg font-semibold text-gray-800 mt-1">{formatTime(timeLeft)}</p>
+            </div>
+            <div className="p-4 border border-gray-200 rounded-lg text-center">
+              <h3 className="text-lg font-semibold text-gray-800">Questions :</h3>
+              <div className="grid grid-cols-5 gap-2 mt-4">
+                {Array.from({ length: 15 }, (_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentQuestion(index)}
+                    className={`w-8 h-8 rounded-md font-semibold ${index === currentQuestion ? "bg-green-500 text-white" : "bg-gray-200 text-gray-800"}`}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="p-4 border border-gray-200 rounded-lg text-center">
-            <h3 className="text-lg font-semibold text-gray-800">Questions :</h3>
-            <div className="grid grid-cols-5 gap-2 mt-4">
-              {Array.from({ length: 15 }, (_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentQuestion(index)}
-                  className={`w-8 h-8 rounded-md font-semibold ${index === currentQuestion ? "bg-green-500 text-white" : "bg-gray-200 text-gray-800"}`}
-                >
-                  {index + 1}
-                </button>
+
+          <div className="flex-1 p-4 border border-gray-300 rounded-lg ml-8 relative">
+            <h2 className="text-lg font-semibold text-gray-800 mb-2">Question No {currentQuestion + 1}:</h2>
+            <p className="text-lg font-medium text-gray-900 mb-4">{questions[currentQuestion].question}</p>
+            <div className="space-y-3 mb-4">
+              {questions[currentQuestion].options.map((option, index) => (
+                <label key={index} className="flex items-center space-x-3 cursor-pointer">
+                  <input
+                    type="radio"
+                    name={`question-${currentQuestion}`}
+                    className="w-5 h-5"
+                    checked={selectedOption === index}
+                    onChange={() => setSelectedOption(index)}
+                  />
+                  <span className="text-lg text-gray-800">{option}</span>
+                </label>
               ))}
+            </div>
+
+            {/* Navigation arrows */}
+            <div className="absolute top-2 right-2 flex space-x-6">
+              <img
+                src="/roundedleftarrow.png"
+                alt="Previous Question"
+                className="cursor-pointer w-8 h-8"
+                onClick={() => handleNavigation(-1)}
+                style={{ visibility: currentQuestion === 0 ? "hidden" : "visible" }}
+              />
+              <img
+                src="/roundedrightarrow.png"
+                alt="Next Question"
+                className="cursor-pointer w-8 h-8"
+                onClick={() => handleNavigation(1)}
+                style={{ visibility: currentQuestion === questions.length - 1 ? "hidden" : "visible" }}
+              />
+            </div>
+
+            {/* Submit button positioned at the bottom-right corner */}
+            <div className="absolute bottom-10 right-4">
+              <button
+                onClick={() => {
+                  localStorage.removeItem("timeLeft"); // Clear the timer on submit
+                  alert("Quiz submitted!");
+                }}
+                className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>
-
-        <div className="flex-1 p-4 border border-gray-300 rounded-lg ml-8 relative">
-          <h2 className="text-lg font-semibold text-gray-800 mb-2">Question No {currentQuestion + 1}:</h2>
-          <p className="text-lg font-medium text-gray-900 mb-4">{questions[currentQuestion].question}</p>
-          <div className="space-y-3 mb-4">
-            {questions[currentQuestion].options.map((option, index) => (
-              <label key={index} className="flex items-center space-x-3 cursor-pointer">
-                <input
-                  type="radio"
-                  name={`question-${currentQuestion}`}
-                  className="w-5 h-5"
-                  checked={selectedOption === index}
-                  onChange={() => setSelectedOption(index)}
-                />
-                <span className="text-lg text-gray-800">{option}</span>
-              </label>
-            ))}
-          </div>
-
-          {/* Navigation arrows */}
-          <div className="absolute top-2 right-2 flex space-x-6">
-            <img
-              src="/roundedleftarrow.png"
-              alt="Previous Question"
-              className="cursor-pointer w-8 h-8"
-              onClick={() => handleNavigation(-1)}
-              style={{ visibility: currentQuestion === 0 ? "hidden" : "visible" }}
-            />
-            <img
-              src="/roundedrightarrow.png"
-              alt="Next Question"
-              className="cursor-pointer w-8 h-8"
-              onClick={() => handleNavigation(1)}
-              style={{ visibility: currentQuestion === questions.length - 1 ? "hidden" : "visible" }}
-            />
-          </div>
-
-          {/* Submit button positioned at the top-right corner */}
-          <div className="absolute bottom-10 right-4">
-            <button
-              onClick={() => {
-                localStorage.removeItem("timeLeft"); // Clear the timer on submit
-                alert("Quiz submitted!");
-              }}
-              className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg"
-            >
-              Submit
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
+      </div>
   );
 };
 

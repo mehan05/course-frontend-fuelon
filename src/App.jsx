@@ -5,6 +5,9 @@ import Trainee from './components/trainee/Trainee';
 import Student from './components/student/Student';
 import QuestionPage from './components/student/questionpage/QuestionPage';
 import Remainders from './components/smallcomponents/Remainders'
+import Chatbot from './components/smallcomponents/chatbot';
+import Course from './components/student/Courses/Course';
+import CourseCards from './components/trainee/components/CourseCards/CourseCards';
 
 function App() {
   return (
@@ -13,8 +16,10 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/trainee/*' element={<Trainee />} />  
         <Route path='/student/*' element={<Student />} />
-        <Route path='/quiz' element={<QuestionPage/>} /> kjkjkj
-        <Route path='remainders' element={<Remainders/>} /> jjkjkjk
+        <Route path='/quiz' element={<QuestionPage/>} /> 
+        <Route path='remainders' element={<Remainders/>} />
+        <Route path='chatbot' element={<Chatbot/>} />
+        <Route path='coursecards' element={<CourseCards/>} />
       </Routes>
     </div>
   );
