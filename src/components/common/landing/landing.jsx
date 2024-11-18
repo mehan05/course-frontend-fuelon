@@ -78,6 +78,33 @@ function Landing() {
         <p className="text-3xl md:text-4xl font-semibold text-gray-700">Top Category</p>
       </div>
 
+      {/* Image Grid Section */}
+      <div className="w-full flex justify-center py-10">
+  <div className="rounded-full bg-gray-100 p-10 flex justify-center items-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
+      {[
+        { title: 'Graphic Design', count: 22, image: '/graphicdesign.png' },
+        { title: 'Artificial Intelligence', count: 41, image: '/artificialintelligence.png' },
+        { title: 'Development', count: 29, image: '/development.png' },
+        { title: 'Marketing', count: 31, image: '/marketing.png' },
+        { title: 'UI & UX', count: 23, image: '/uiux.png' },
+        { title: 'Datascience', count: 19, image: '/datascience.png' },
+      ].map((category, index) => (
+        <div key={index} className="flex flex-col items-center">
+          <div className="flex items-center justify-center mb-4">
+            <img src={category.image} alt={category.title} className="w-24 h-24 object-contain" />
+          </div>
+          <p className="text-lg font-poppins text-gray-700">{category.title}</p>
+          <p className="text-sm font-poppins text-gray-500">({category.count})</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+
+
+
       <div className="w-full bg-white px-4 md:px-8 py-8 md:py-20 flex flex-col md:flex-row items-center justify-between font-poppins">
         <div className="md:w-1/2">
           <img src="/landingimage2.png" alt="Courses Available" className="object-cover w-full md:w-3/4 h-auto mx-auto" />
@@ -94,21 +121,26 @@ function Landing() {
         </div>
       </div>
 
-      <div className="w-full bg-indigo-900 text-white py-10 px-4 md:px-8 rounded-[20px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center w-full max-w-5xl mx-auto">
+      {/* Stats Section */}
+      <div className="w-full bg-indigo-900 text-white py-10 flex justify-center rounded-[20px]">
+        <div className="flex justify-around items-center w-full max-w-5xl px-8 py-6 rounded-lg shadow-md bg-indigo-900">
           {[{ number: '45K+', label: 'Active Students' }, { number: '24K+', label: 'Faculty Courses' }, { number: '14K+', label: 'Best Professors' }, { number: '42K+', label: 'Award Achieved' }].map((stat, index) => (
-            <div key={index} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold">{stat.number}</p>
-              <p className="text-sm md:text-lg">{stat.label}</p>
+            <div key={index} className="flex items-center">
+              <div className="text-center px-6">
+                <p className="text-3xl font-bold">{stat.number}</p>
+                <p className="text-lg">{stat.label}</p>
+              </div>
+              {index < 3 && <div className="h-16 w-px bg-white"></div>}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="w-full text-center py-10 md:py-20 font-poppins">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 mb-6">Explore Our Best Courses</h2>
+      {/* Explore Our Best Courses Section */}
+      <div className="w-full text-center py-20 font-poppins">
+        <h2 className="text-4xl font-semibold text-gray-700 mb-6">Explore Our Best Courses</h2>
         <div className="flex justify-center mt-6">
-          <ul className="flex flex-wrap space-x-4 md:space-x-8 text-gray-500 text-sm md:text-lg font-semibold">
+          <ul className="flex space-x-8 text-gray-500 text-lg font-semibold">
             {['All Courses', 'Design', 'Business', 'Development'].map((category) => (
               <li
                 key={category}
@@ -121,7 +153,7 @@ function Landing() {
           </ul>
         </div>
 
-        <div className="flex flex-wrap justify-center mt-10 gap-6">
+        <div className="flex flex-wrap justify-center mt-10 gap-10">
           {[{
             title: 'Laravel',
             category: 'Development',
@@ -146,19 +178,33 @@ function Landing() {
           }, {
             title: 'Financial Analyst Training & Investing Course',
             category: 'Business',
-            level: 'Crash Course',
+            level: 'Crush Course',
             price: '$12.00',
             reviews: '4.8 Reviews',
             image: '/finance.png'
           }].map((course, index) => (
-            <div key={index} className="w-full md:w-80 bg-white shadow-lg rounded-lg overflow-hidden relative flex flex-col">
+            <div key={index} className="w-80 bg-white shadow-lg rounded-lg overflow-hidden relative flex flex-col">
               <img src={course.image} alt={course.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h3 className="font-semibold text-lg text-gray-800">{course.title}</h3>
-                <div className="text-sm text-gray-500">{course.category} | {course.level}</div>
-                <p className="text-lg text-gray-800 mt-2">{course.price}</p>
-                <p className="text-sm text-gray-500">{course.reviews}</p>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="bg-gray-200 px-4 py-2 rounded-full w-max">
+                      <span className="text-sm font-semibold text-gray-800">{course.category}</span>
+                    </div>
+                    <div className="flex items-center text-sm text-yellow-500">
+                      <span className="text-xl">⭐</span>
+                      <span className="ml-2">{course.reviews}</span>
+                    </div>
+                  </div>
+                  <div className="text-lg font-bold text-gray-800">{course.title}</div>
+                  <p className="text-sm text-gray-500 mt-1 mb-4">By David Millar</p>
+                </div>
+                <button className="self-start bg-[#fff3d4] text-gray-800 text-sm px-4 py-2 rounded-full mt-4 flex items-center shadow-lg shadow-black">
+                  Enroll Now
+                  <span className="ml-2">→</span>
+                </button>
               </div>
+              <div className="absolute bottom-6 right-6 text-xl font-semibold text-blue-600">{course.price}</div>
             </div>
           ))}
         </div>
