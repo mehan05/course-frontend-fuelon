@@ -7,6 +7,8 @@ import TestPage from './TestPage/TestPage'
 import MyContext from '../../context/context'
 import axios from 'axios'
 import QuestionPage from './questionpage/QuestionPage'
+import EnrolledCourse from './Dashboard/EnrolledCourse/EnrolledCourse'
+import Dashboard from './Dashboard/DashBoard'
 
 const Student = () => {
   const {setCourses} = useContext(MyContext);
@@ -35,6 +37,7 @@ try{
           <Route  path='quiz' element={<TestPage/>} />
           <Route path='quiz/quizpage' element={<QuestionPage/>} />
           <Route path='mycourses' element={<Course/>} />
+          <Route path='dashboard' element={<Dashboard/>} />
           <Route path='mycourses/modules' element={<ModulePage/>} />
         </Routes>
     </div>

@@ -8,7 +8,6 @@ import Remainders from './components/smallcomponents/Remainders'
 import FeedBackCard from './components/smallcomponents/FeedBackCard';
 import CourseCards from './components/trainee/components/CourseCards/CourseCards';
 import Landing from './components/common/landing/landing';
-import Courses from './components/student/Dashboard/Courses/courses'
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
         <Route path='FeedBackCard' element={<FeedBackCard/>} />
         <Route path='coursecards' element={<CourseCards/>} />
         <Route path='landing' element={<Landing/>} />
-        <Route path='courses' element={<Courses/>} />
       </Routes>
     </div>
   );

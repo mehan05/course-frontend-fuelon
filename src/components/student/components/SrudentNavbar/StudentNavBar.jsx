@@ -115,6 +115,10 @@ const StudentNavBar = () => {
               Login
             </a>
           )}
+
+          <Link to="/student/dashboard">
+              <img src="/avatar.png" alt="" className='h-10 w-10' />
+          </Link>
         
            
         </div>
