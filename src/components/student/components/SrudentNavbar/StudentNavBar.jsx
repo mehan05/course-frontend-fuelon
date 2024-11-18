@@ -81,6 +81,17 @@ const StudentNavBar = () => {
             <i className="fa fa-shopping-cart"></i>
           </a>
 
+          {location.pathname.startsWith('/student') && (
+              <Link to="/student/quiz">
+                    <button
+                className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full"
+              >
+                Test
+              </button>
+              </Link>
+            ) 
+          }
+          
           {location.pathname.startsWith('/trainee') ? (
             <div className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full flex items-center gap-2">
               <Link to="/trainee/newcourse/course_1">New Course</Link>
@@ -104,6 +115,8 @@ const StudentNavBar = () => {
               Login
             </a>
           )}
+        
+           
         </div>
       </div>
     </nav>

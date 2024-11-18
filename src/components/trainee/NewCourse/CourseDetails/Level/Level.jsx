@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProgressBar from '../../components/Progressbar';
 
 const LevelForm = () => {
   return (
     <div className="flex flex-col p-4 md:p-8 min-h-screen">
+      <div className='m-5'>
+      <ProgressBar precentage={100} />
+
+      </div>
       <div className="flex flex-col items-start w-full max-w-xl mb-4 md:mb-8">
         <h1 className="text-2xl md:text-4xl font-bold mb-1">Level</h1>
         <span className="text-gray-400 text-sm md:text-base">Add your level here...</span>
@@ -44,9 +49,9 @@ const LevelForm = () => {
       </div>
 
       <div className="fixed bottom-12 right-9">
-        <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md text-sm md:text-xl">
-          NEXT
-        </Link>
+      <Link to="levels"  className='fixed bottom-4 right-4  bg-violet-500 p-2 text-center text-white rounded-lg font-semibold w-[100px] min-h-[10px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 hover:duration-300'>
+                Next
+            </Link  >
       </div>
     </div>
   );

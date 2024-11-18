@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const CoursDetails = () => {
   return (
     <div className="px-4 md:px-8 lg:px-16">
+      <div className='mb-5'> 
+
+        <ProgressBar precentage={30} />
+      </div>
       <div className="flex flex-col items-start mb-4">
         <h1 className="text-3xl md:text-4xl font-bold mb-1">Course</h1>
         <span className="text-gray-400">Add Your course here...</span>
-      </div>
-      <div className='mb-5'> 
-
-        <ProgressBar/>
       </div>
       <form className="w-full max-w-4xl mx-auto">
         <div className="mb-6 flex flex-col gap-2 items-start">
@@ -68,7 +68,7 @@ const CoursDetails = () => {
           <input type="file" id="image-upload" className="hidden" />
         </div>
         
-            <Link to="modules"  className='fixed bottom-4 right-4  bg-violet-500 p-2 rounded-lg font-semibold w-[100px] min-h-[10px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 hover:duration-300'>
+            <Link to="modules"  className='fixed bottom-4 right-4  bg-violet-500 p-2 text-center text-white rounded-lg font-semibold w-[100px] min-h-[10px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 hover:duration-300'>
                 Next
             </Link  >
       </form>

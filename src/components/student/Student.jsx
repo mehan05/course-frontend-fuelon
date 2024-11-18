@@ -1,14 +1,39 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Course from './Courses/Course'
 import Landing from '../common/landing/landing'
 import ModulePage from './ModulePage/ModulePage'
+import TestPage from './TestPage/TestPage'
+import MyContext from '../../context/context'
+import axios from 'axios'
+import QuestionPage from './questionpage/QuestionPage'
 
 const Student = () => {
+  const {setCourses} = useContext(MyContext);
+
+  const api = axios.create({
+    baseURL:"http://localhost:5000",
+    headers:{
+        "Content-Type":"application/json",
+    }
+})
+const getCourses = async () => {
+try{
+    const response = await api.get("/courses");
+    setCourses(response.data);
+}catch(error){
+    console.log(error);
+}
+}
+  useEffect(()=>{
+  getCourses();
+  },[])
   return (
     <div>
         <Routes>
           <Route path='home' element={<Landing/>} />
+          <Route  path='quiz' element={<TestPage/>} />
+          <Route path='quiz/quizpage' element={<QuestionPage/>} />
           <Route path='mycourses' element={<Course/>} />
           <Route path='mycourses/modules' element={<ModulePage/>} />
         </Routes>
