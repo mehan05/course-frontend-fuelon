@@ -15,12 +15,7 @@ const Reminders = () => {
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-bold text-gray-800 leading-tight">Reminders</h2>
 
-        <button
-          className="text-red-500 font-bold text-lg leading-none hover:text-red-600 focus:outline-none"
-          aria-label="Close"
-        >
-          X
-        </button>
+      
       </div>
 
       {/* Reminder Items */}

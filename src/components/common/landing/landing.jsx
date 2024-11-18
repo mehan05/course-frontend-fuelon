@@ -4,9 +4,11 @@ import TraineeNavbar from '../../trainee/components/TraineeNavbar/TraineeNavbar'
 import { useLocation } from 'react-router-dom';
 import StudentNavBar from '../../student/components/SrudentNavbar/StudentNavBar';
 import Reminders from '../../smallcomponents/Remainders';
+import FeedBackCard from '../../smallcomponents/FeedBackCard';
 
 function Landing() {
   const [toggle, setToggle] = useState(false);
+  const[feedbackToogle,setFeedbackToogle]=useState(false);
   const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState('All Courses');
 
@@ -73,7 +75,18 @@ function Landing() {
           </div>
         </div>
       )}
+        <div className='fixed right-5  top-40 z-10  transition-all ease-in-out duration-1000'>
 
+            {feedbackToogle &&(
+              <FeedBackCard/>
+            )}
+        </div>
+      <div className='fixed right-5  top-[700px] z-10'>
+        <button onClick={()=>setFeedbackToogle(!feedbackToogle)}>
+
+        <img src="/feedback-icon.png" alt="feedback"  className='h-20 w-20'/>
+        </button>
+      </div>
       <div className="w-full text-center py-10">
         <p className="text-3xl md:text-4xl font-semibold text-gray-700">Top Category</p>
       </div>
