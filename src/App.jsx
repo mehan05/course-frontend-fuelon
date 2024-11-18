@@ -8,6 +8,7 @@ import Remainders from './components/smallcomponents/Remainders'
 import Chatbot from './components/smallcomponents/chatbot';
 import Course from './components/student/Courses/Course';
 import CourseCards from './components/trainee/components/CourseCards/CourseCards';
+import Landing from './components/common/landing/landing';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='remainders' element={<Remainders/>} />
         <Route path='chatbot' element={<Chatbot/>} />
         <Route path='coursecards' element={<CourseCards/>} />
+        <Route path='landing' element={<Landing/>} />
       </Routes>
     </div>
   );

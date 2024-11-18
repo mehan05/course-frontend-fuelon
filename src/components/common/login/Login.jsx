@@ -3,53 +3,71 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
-  const[role,setRole] = useState();
-  console.log(role)
+  const [role, setRole] = useState();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    {role==="student"?navigate("/student/home"):navigate("/trainee/home")};
-  }
+    role === "student" ? navigate("/student/home") : navigate("/trainee/home");
+  };
+
   return (
-    <div className="flex flex-col  justify-end items-center  bg-gray-50">
-      <div className="flex justify-end w-full p-10">
-        <button className="pr-5 pl-5 pt-2 pb-2 rounded-lg bg-[#5072f5] border-2 text-white">Signup</button>
+    <div className="flex flex-col bg-gray-50 min-h-screen">
+      {/* Signup Button */}
+      <div className="flex justify-end w-full p-4">
+        <button className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+          Signup
+        </button>
       </div>
 
-      <div className="flex items-center justify-around  w-full ">
-        <div className="flex flex-col items-center text-center gap-6">
-          <h1 className="text-4xl text-[#161439] font-semibold font-poppins">Welcome!</h1>
-          <h3 className="text-3xl text-[#161439] font-semibold font-poppins">Login to your account</h3>
-          <div className="w-[400px] h-[266px]">
-            <img src="/loginPageImage.png" alt="Login Page" className="w-full h-full object-contain" />
+      {/* Main Content */}
+      <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between lg:gap-10 w-full lg:w-3/4 mx-auto p-4">
+        {/* Welcome Section */}
+        <div className="flex flex-col items-center lg:items-start lg:text-left text-center gap-4 lg:w-1/2">
+          <h1 className="text-3xl lg:text-4xl text-gray-800 font-semibold">Welcome!</h1>
+          <h3 className="text-xl lg:text-3xl text-gray-800 font-semibold">
+            Login to your account
+          </h3>
+          <div className="w-48 md:w-64 lg:w-[400px]">
+            <img
+              src="/loginPageImage.png"
+              alt="Login Page"
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
 
-        <div className="border-2 p-10 w-[508px] h-[512px] rounded-lg shadow-lg">
+        {/* Login Form */}
+        <div className="border p-6 md:p-10 w-full lg:w-[508px] rounded-lg shadow-lg bg-white">
           <form onSubmit={handleSubmit}>
-            <div className="mb-5 flex flex-col items-start">
+            {/* Email Field */}
+            <div className="mb-5">
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
-                className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                className="border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="sahil@gmail.com"
                 required
               />
             </div>
-            <div className="mb-5 flex flex-col items-start">
+
+            {/* Password Field */}
+            <div className="mb-5">
               <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">
                 Password
               </label>
               <input
                 type="password"
                 id="password"
-                className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                className="border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
               />
             </div>
-            <div className="mb-5 flex flex-col items-start">
+
+            {/* Role Dropdown */}
+            <div className="mb-5">
               <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900">
                 Role
               </label>
@@ -57,7 +75,7 @@ const Login = () => {
                 name="role"
                 id="role"
                 value={role}
-                onChange={(e)=>setRole(e.target.value)}
+                onChange={(e) => setRole(e.target.value)}
                 className="border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
               >
@@ -65,23 +83,44 @@ const Login = () => {
                 <option value="student">Student</option>
               </select>
             </div>
-            <div className="flex justify-between mb-5">
-              <button className="text-gray-500">Forgot Password?</button>
-              <button className="rounded-lg pr-5 pl-5 pt-2 pb-2 bg-[#5072f5] border-2 text-white">
+
+            {/* Forgot Password and Login Button */}
+            <div className="flex justify-between items-center mb-5">
+              <button className="text-gray-500 hover:text-blue-500">
+                Forgot Password?
+              </button>
+              <button
+                type="submit"
+                className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+              >
                 Login
               </button>
             </div>
-            <div className="flex justify-between items-center">
+
+            {/* Social Login */}
+            <div className="flex flex-col items-center gap-4">
               <p>Login With</p>
-              <div className="flex gap-6">
+              <div className="flex justify-center gap-4">
                 <button>
-                  <img src="/facebookLogo.png" alt="Facebook Logo" className="w-[42px] h-[42px]" />
+                  <img
+                    src="/facebookLogo.png"
+                    alt="Facebook Logo"
+                    className="w-10 h-10 object-contain"
+                  />
                 </button>
                 <button>
-                  <img src="/GoogleLogo.png" alt="Google Logo" className="w-[42px] h-[42px]" />
+                  <img
+                    src="/GoogleLogo.png"
+                    alt="Google Logo"
+                    className="w-10 h-10 object-contain"
+                  />
                 </button>
-                <button type='submit'>
-                  <img src="/linkedinLogo.png" alt="LinkedIn Logo" className="w-[42px] h-[42px]" />
+                <button>
+                  <img
+                    src="/linkedinLogo.png"
+                    alt="LinkedIn Logo"
+                    className="w-10 h-10 object-contain"
+                  />
                 </button>
               </div>
             </div>
