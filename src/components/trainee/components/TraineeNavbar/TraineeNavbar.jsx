@@ -6,8 +6,8 @@ const TraineeNavbar = () => {
 
   return (
     <nav className="bg-white mb-5">
-      <div className="px-4 py-4 flex flex-wrap items-center justify-between">
-        <div className="flex flex-wrap gap-6 md:gap-12 flex-grow">
+      <div className=" px-4 py-4 flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap gap-6 md:gap-12  m-3">
           <NavLink
             to="/trainee/home"
             className={({ isActive }) =>
@@ -30,7 +30,7 @@ const TraineeNavbar = () => {
           </NavLink>
         </div>
 
-        <div className="relative flex-grow md:flex-grow-0 w-full md:w-auto mt-4 md:mt-0">
+        <div className="relative flex-grow md:flex-grow w-full md:w-auto mt-4 md:mt-0">
           <input
             type="text"
             placeholder="Search for Courses..."

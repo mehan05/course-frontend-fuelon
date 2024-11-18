@@ -4,7 +4,7 @@ import TraineeNavbar from '../components/TraineeNavbar/TraineeNavbar'
 const NewCourse = () => {
   return (
     <div>
-            <div className=" m-8">
+            <div className=" ">
                     <TraineeNavbar/>
             </div >
             <div>
