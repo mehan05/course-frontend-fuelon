@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from '../../common/navbar/Navbar';
+import StudentNavBar from "../components/SrudentNavbar/StudentNavBar";
+import { Link } from "react-router-dom";
 
 const QuestionPage = () => {
   const [questions] = useState([
@@ -63,13 +65,16 @@ const QuestionPage = () => {
 
   return (
     <div>
-        <Navbar />
-      <div className="bg-white  flex flex-col items-center justify-center font-sans" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <StudentNavBar />
+      <div className="bg-white  flex flex-col items-center justify-center font-sans  mr-5 ml-5 " style={{ fontFamily: 'Poppins, sans-serif' }}>
         {/* Navbar */}
 
         <header className="w-full  px-6 py-4 flex flex-col items-start text-gray-800">
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-semibold">←</span>
+            <Link to="/student/quiz" >
+              
+              <span className="text-4xl m-3   font-bold">←</span>
+            </Link>
             <h1 className="text-xl font-bold">Assess Yourself</h1>
           </div>
           <p className="text-gray-500 mt-2">Complete the test now</p>

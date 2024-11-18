@@ -11,24 +11,7 @@ import PainFilterCard from '../components/PaidFilterCard/PainFilterCard';
 const Course = () => {
     const {courses,setCourses,searchQuery,setSearchQuery,SelectedCategoryContext,setSelectedCategoryContext,languageContext,setLanguageContext,PaidContext,setPaidContext} = useContext(MyContext);
 
-    const api = axios.create({
-            baseURL:"http://localhost:5000",
-            headers:{
-                "Content-Type":"application/json",
-            }
-    })
-    const getCourses = async () => {
-        try{
-            const response = await api.get("/courses");
-            setCourses(response.data);
-        }catch(error){
-            console.log(error);
-        }
-    }
-    useEffect(()=>{
-        getCourses();
-    },[])
-    console.log(courses);
+
     const filteredCourses = courses.filter((course) => {
         const courseNameMatches = course.courseName.toLowerCase().includes(searchQuery.toLowerCase());
 
