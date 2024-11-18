@@ -5,24 +5,22 @@ const Reminders = () => {
     <div
       className="max-w-md mx-auto bg-white shadow-lg rounded-lg p-6 font-poppins"
       style={{
-        border: "2px dashed #D1D5DB", // Dashed border with light gray color
-        borderRadius: "12px", // Rounded corners
-        padding: "16px", // Space between border and content
-        boxSizing: "border-box", // Ensures proper layout alignment
+        border: "2px dashed #D1D5DB",
+        borderRadius: "12px",
+        padding: "16px",
+        boxSizing: "border-box",
       }}
     >
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-bold text-gray-800 leading-tight">Reminders</h2>
-        <button className="text-red-500 font-bold text-xl leading-none">X</button>
       </div>
 
-      {/* UI UX Test */}
       <div className="flex items-center bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4">
         <div className="mr-4 ml-6">
           <img
-            src="/uiuxclock.png" // Referencing the image in the public directory
+            src="/uiuxclock.png"
             alt="UI UX Clock Icon"
-            className="w-8 h-8" // Size of the icon (adjust as needed)
+            className="w-8 h-8"
           />
         </div>
         <div className="flex-grow">
@@ -32,13 +30,12 @@ const Reminders = () => {
         <span className="text-blue-800 font-bold text-sm">11:30–12:30</span>
       </div>
 
-      {/* C++ Test */}
       <div className="flex items-center bg-red-50 p-4 rounded-lg border border-red-200 mb-4">
-        <div className="mr-4 ml-6"> {/* Added image for C++ section */}
+        <div className="mr-4 ml-6">
           <img
-            src="/c++image.png" // Referencing the C++ image in the public directory
+            src="/c++image.png"
             alt="C++ Icon"
-            className="w-8 h-8" // Size of the icon (adjust as needed)
+            className="w-8 h-8"
           />
         </div>
         <div className="flex-grow">
@@ -48,13 +45,12 @@ const Reminders = () => {
         <span className="text-red-800 font-bold text-sm">9:00–10:00</span>
       </div>
 
-      {/* UI UX for Pro */}
       <div className="flex items-center bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4">
         <div className="mr-4 ml-6">
           <img
-            src="/uiuxclock.png" // Referencing the image in the public directory
+            src="/uiuxclock.png"
             alt="UI UX Clock Icon"
-            className="w-8 h-8" // Size of the icon (adjust as needed)
+            className="w-8 h-8"
           />
         </div>
         <div className="flex-grow">
@@ -64,13 +60,12 @@ const Reminders = () => {
         <span className="text-blue-800 font-bold text-sm">11:00–12:00</span>
       </div>
 
-      {/* C-Level Registration */}
       <div className="flex items-center bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-        <div className="mr-4 ml-6"> {/* Added image for C section */}
+        <div className="mr-4 ml-6">
           <img
-            src="/cimage.png" // Referencing the C image in the public directory
+            src="/cimage.png"
             alt="C Level Icon"
-            className="w-8 h-8" // Size of the icon (adjust as needed)
+            className="w-8 h-8"
           />
         </div>
         <div className="flex-grow">

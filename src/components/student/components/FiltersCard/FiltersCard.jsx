@@ -1,8 +1,10 @@
-import  { useState } from 'react'
+import  { useContext, useEffect, useState } from 'react'
+import HelperFunc from '../helperFunction/HelperFunc';
+import MyContext from '../../../../context/context';
 
 const FiltersCard = () => {
   const [showMore, setShowMore] = useState(false);
-
+  const[selectedCategory, setSelectedCategory] = useState([]);
   const categories = [
     "Datascience",
     "Artificial Intelligence",
@@ -11,7 +13,11 @@ const FiltersCard = () => {
     "UI&UX",
     "Linux",
   ];
-
+  const {setSelectedCategoryContext} = useContext(MyContext);
+  useEffect(() => {
+    
+    setSelectedCategoryContext(selectedCategory);
+  },[selectedCategory,setSelectedCategoryContext])
   const displayedCategories = showMore ? categories : categories.slice(0, 5);
 
   return (
@@ -19,8 +25,8 @@ const FiltersCard = () => {
       <h2 className="text-xl font-semibold text-gray-800 mb-4">Category</h2>
       <div className="flex flex-col gap-2">
         {displayedCategories.map((category, index) => (
-          <label key={index} className="flex items-center text-gray-700 text-lg">
-            <input type="checkbox" className="mr-2 rounded text-indigo-600 focus:ring-indigo-500" />
+          <label key={index} className="flex items-center  text-lg">
+            <input type="checkbox" className="mr-2 rounded text-indigo-600 focus:ring-indigo-500"   value={category}  onChange={(e)=>{  HelperFunc(e,setSelectedCategory)}}  />
             {category}
           </label>
         ))}

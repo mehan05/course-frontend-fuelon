@@ -1,6 +1,9 @@
 import { Link, NavLink } from 'react-router-dom'
+import MyContext from '../../../../context/context';
+import { useContext } from 'react';
 
 const StudentNavBar = () => {
+  const{searchQuery,setSearchQuery}=useContext(MyContext);
   return (
     <nav className="bg-white">
     <div className="px-4 py-6 flex items-center w-full">
@@ -27,6 +30,7 @@ const StudentNavBar = () => {
         <input
           type="text"
           placeholder="Search for Courses..."
+          onChange={(e)=>setSearchQuery(e.target.value)}
           className="border border-gray-300 pl-12 pr-20 py-2 rounded-full w-full text-gray-500 placeholder-gray-400"
         />
 
