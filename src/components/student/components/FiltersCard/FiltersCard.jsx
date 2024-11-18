@@ -6,7 +6,7 @@ const FiltersCard = () => {
   const [showMore, setShowMore] = useState(false);
   const[selectedCategory, setSelectedCategory] = useState([]);
   const categories = [
-    "Datascience",
+    "Data science",
     "Artificial Intelligence",
     "Machine learning",
     "Mobile App develop",
