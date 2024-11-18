@@ -75,7 +75,7 @@ function Landing() {
           </div>
         </div>
       )}
-        <div className='fixed right-5  top-40 z-10  transition-all ease-in-out duration-1000'>
+        <div className='fixed right-5  top-40 z-10 transition-all ease-in-out duration-1000'>
 
             {feedbackToogle &&(
               <FeedBackCard/>
@@ -212,12 +212,9 @@ function Landing() {
                   <div className="text-lg font-bold text-gray-800">{course.title}</div>
                   <p className="text-sm text-gray-500 mt-1 mb-4">By David Millar</p>
                 </div>
-                <button className="self-start bg-[#fff3d4] text-gray-800 text-sm px-4 py-2 rounded-full mt-4 flex items-center shadow-lg shadow-black">
-                  Enroll Now
-                  <span className="ml-2">→</span>
-                </button>
+               
               </div>
-              <div className="absolute bottom-6 right-6 text-xl font-semibold text-blue-600">{course.price}</div>
+             
             </div>
           ))}
         </div>
