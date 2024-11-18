@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Chatbot = () => {
+const FeedBackCard = () => {
   const [selectedEmoji, setSelectedEmoji] = useState(null);
   const [selectedTag, setSelectedTag] = useState(null);
   const [suggestion, setSuggestion] = useState("");
@@ -71,4 +71,4 @@ const Chatbot = () => {
   );
 };
 
-export default Chatbot;
+export default FeedBackCard;
