@@ -9,7 +9,7 @@ const CourseCards = ({ course }) => {
     <div className="m-5">
       <div className="border-2 rounded-xl max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto p-4 hover:transition-transform hover:scale-105 hover:duration-400 max-h-[500px] flex-grow">
         <div>
-          <img
+          <img  
             src="/courseImage.png"
             alt="Course"
             className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-lg"
@@ -33,11 +33,22 @@ const CourseCards = ({ course }) => {
             <p className="text-sm sm:text-base">
               <span className="text-gray-500">By</span> {course.courseAuthor}
             </p>
+            {
+              location.pathname.startsWith("/trainee")&&(
+
+              <p className="text-[#5751E1] text-xl sm:text-2xl font-semibold mt-2 sm:mt-0">
+                ${course.price}
+              </p>
+              )
+            }
           </div>
         </div>
 
         <div className="mt-4 flex flex-col sm:flex-row justify-between items-center">
-          {location.pathname.endsWith("/mycourses") && (
+       
+
+          
+          {location.pathname.startsWith("student/mycourses") && (
             <Link to="modules" className="mt-2 sm:mt-0">
                <img
                 src="/enrollnow_img.png"
@@ -59,9 +70,14 @@ const CourseCards = ({ course }) => {
                 )
               }
             </Link>
-          <p className="text-[#5751E1] text-xl sm:text-2xl font-semibold mt-2 sm:mt-0">
-            ${course.price}
-          </p>
+            {
+              location.pathname.startsWith("/student")&&(
+
+              <p className="text-[#5751E1] text-xl sm:text-2xl font-semibold mt-2 sm:mt-0">
+                ${course.price}
+              </p>
+              )
+            }
         </div>
       </div>
     </div>

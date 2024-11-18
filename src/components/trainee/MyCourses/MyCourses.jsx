@@ -26,11 +26,11 @@ const MyCourses = () => {
     },[])
     console.log(courses);
   return (
-    <div className="m-5">
-        <div className="  m-8">
+    <div className="m3">
+        <div className="  ">
                     <TraineeNavbar/>
         </div >
-        <div className=" flex justify-start">
+        <div className=" flex justify-start ml-3">
             <h1 className=" font-semibold text-3xl text-[##161439]">
                 My Courses
             </h1>
