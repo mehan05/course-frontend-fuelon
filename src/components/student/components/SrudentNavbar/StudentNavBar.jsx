@@ -99,7 +99,7 @@ const StudentNavBar = () => {
             </div>
           ) : null}
 
-          {location.pathname.startsWith('/trainee') ? (
+          {location.pathname.startsWith('/trainee') &&(
             <Link to="/trainee/dashboard">
               <img
                 src="/avatar.png"
@@ -107,14 +107,17 @@ const StudentNavBar = () => {
                 className="w-10 h-10 rounded-full"
               />
             </Link>
-          ) : (
-            <a
-              href="/login"
-              className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Login
-            </a>
-          )}
+          ) 
+          }
+            {location.pathname === "/student/home" &&
+            
+              <Link
+                to="/"
+                className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full"
+              >
+                Logout
+              </Link>
+            }
 
           <Link to="/student/dashboard">
               <img src="/avatar.png" alt="" className='h-10 w-10' />

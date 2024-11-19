@@ -80,7 +80,16 @@ const TraineeNavbar = () => {
               alt="Plus Icon"
             />
           </div>
-          {location.pathname.startsWith("/trainee") ? (
+          {location.pathname === "/trainee/home" &&
+            
+            <Link
+              to="/"
+              className="bg-yellow-500 ml-3   hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Logout
+            </Link>
+          }
+          {location.pathname.startsWith("/trainee") && (
             <Link to="/trainee/dashboard">
               <img
                 src="/avatar.png"
@@ -88,14 +97,10 @@ const TraineeNavbar = () => {
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-full ml-2 sm:ml-4"
               />
             </Link>
-          ) : (
-            <a
-              href="/login"
-              className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 sm:py-2 sm:px-4 rounded-full ml-2 sm:ml-4"
-            >
-              Login
-            </a>
-          )}
+          ) 
+          }
+
+            
         </div>
       </div>
     </nav>
