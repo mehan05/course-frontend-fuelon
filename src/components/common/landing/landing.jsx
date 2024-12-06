@@ -16,25 +16,7 @@ function Landing() {
   const [selectedCategory, setSelectedCategory] = useState('All Courses');
   const { courses, setCourses } = useContext(MyContext);
 
-  const api = axios.create({
-    baseURL: "http://localhost:5000",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  const getCourses = async () => {
-    try {
-      const response = await api.get("/courses");
-      setCourses(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getCourses();
-  }, []);
+ 
 
   useEffect(() => {
     const isPopupShown = localStorage.getItem("popup");

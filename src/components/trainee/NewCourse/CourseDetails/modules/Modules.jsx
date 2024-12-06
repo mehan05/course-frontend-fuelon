@@ -7,7 +7,7 @@ const Modules = () => {
   const [modules, setModules] = useState([]);
   const [newModuleTitle, setNewModuleTitle] = useState("");
 
-  const handleAddModule = () => {
+   const handleAddModule = () => {
     setModules([
       ...modules,
       {
@@ -15,7 +15,6 @@ const Modules = () => {
         description: "",
         cost: "",
         video: "",
-        quiz: [],
       },
     ]);
     setNewModuleTitle("");
@@ -32,7 +31,7 @@ const Modules = () => {
       <div className="mb-5">
         <ProgressBar precentage={60} />
       </div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-start">
         <div className="flex flex-col items-start mb-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1">Modules</h1>
           <span className="text-gray-400">Add Your Modules here...</span>
@@ -64,7 +63,7 @@ const Modules = () => {
         <div className="fixed bottom-4 right-4">
           <Link
             to="levels"
-            className="bg-violet-500 px-4 py-2 text-center text-white rounded-lg font-semibold w-[100px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 transition duration-300"
+            className="bg-[#5072F5] px-4 py-2 text-center text-white rounded-lg font-semibold w-[150px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 transition duration-300"
           >
             Next
           </Link>
