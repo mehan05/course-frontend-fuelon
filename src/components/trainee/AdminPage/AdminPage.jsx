@@ -40,7 +40,7 @@ const AdminPage = () => {
 
 
                 <div className='flex flex-col'>
-                    <div>
+                    <div className='mb-5'>
                       <MessageList/>
                     </div>
 
