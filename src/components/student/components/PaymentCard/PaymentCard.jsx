@@ -57,8 +57,12 @@ const PaymentCard = () => {
             <img src="/payment-card-round.png" alt="Mastercard" className="w-8 h-8" />
             <img src="/payment-card-visa.png" alt="Visa" className="w-auto h-5" />
         </div>
-        <button className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-full font-semibold">
-            Enroll Now →
+        <button >
+        <img
+                  src="/enrollnow_img.png"
+                  className="h-10 w-auto object-contain hover:scale-105"
+                  alt="Enroll Now"
+                />
         </button>
         </div>
     </div>

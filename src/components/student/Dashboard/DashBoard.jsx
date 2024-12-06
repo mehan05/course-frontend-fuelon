@@ -14,7 +14,7 @@ const Dashboard = () => {
       </div>
 
       <div className="flex flex-wrap lg:flex-nowrap justify-between gap-5">
-        <div className="w-full lg:w-2/4">
+        <div className="w-full lg:w-2/4  shadow-lg">
           <h1 className="text-3xl font-semibold m-2">Recommended Course</h1>
           <div>
             <RecommendedCourse />

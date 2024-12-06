@@ -10,7 +10,7 @@ const ProfileCard = () => {
           className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover"
         />
       </div>
-      <div className="text-center md:text-left md:ml-6 mt-4 md:mt-0">
+      <div className="flex flex-col items-center md:text-left md:ml-6 mt-4 md:mt-0">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800">
           Shakshi Sham S
         </h2>

@@ -56,13 +56,13 @@ const Course = () => {
       </div>
       <div className="flex gap-5">
         <div className="flex flex-col gap-4 items-center sticky top-4 h-fit">
-          <div className="border-2 p-2 shadow-lg">
+          <div className="pl-5">
             <FiltersCard />
           </div>
-          <div className="border-2 p-2 shadow-lg">
+          <div className="pl-5">
             <LanguageFilterCard />
           </div>
-          <div className="border-2 p-2 shadow-lg">
+          <div className="pl-5">
             <PainFilterCard />
           </div>
         </div>

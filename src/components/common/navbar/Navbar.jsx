@@ -12,7 +12,6 @@ function Navbar() {
   return (
     <nav className="bg-white border-b border-gray-200">
       <div className="px-4 py-6 flex flex-wrap items-center justify-between">
-        {/* Logo and Navigation Links */}
         <div className="flex items-center justify-between w-full lg:w-auto">
           <a href="/" className="text-blue-500 font-bold text-xl">
             Home
@@ -30,7 +29,6 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Search Bar */}
         <div className="flex flex-grow justify-center mt-4 lg:mt-0 w-full lg:w-auto">
           <div className="relative w-full max-w-lg">
             <input
@@ -66,7 +64,6 @@ function Navbar() {
           </div>
         </div>
 
-        {/* User Options */}
         <div className="flex items-center space-x-4 mt-4 lg:mt-0">
           <a href="/wishlist" className="text-gray-500 hover:text-gray-700 hidden lg:block">
             <i className="fa fa-heart"></i>
