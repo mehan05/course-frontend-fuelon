@@ -63,7 +63,7 @@ const ModulePage = () => {
     <div>
 
         <div className="mb-8">
-          <StudentNavBar />
+          <StudentNavBar />git push
         </div>
       <div className="m-3">
 
