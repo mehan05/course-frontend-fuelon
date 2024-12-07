@@ -6,6 +6,7 @@ import Modules from './NewCourse/CourseDetails/modules/Modules';
 import Level from './NewCourse/CourseDetails/Level/Level';
 import AdminPage from './AdminPage/AdminPage';
 import Landing from '../common/landing/landing';
+import Quality from './AdminPage/components/Quality';
 
 const Trainee = () => {
   return (
@@ -14,8 +15,11 @@ const Trainee = () => {
       <Route path='mycourses' element={<MyCourses />} />
       <Route path='newcourse' element={<NewCourse />}>
         <Route path='course_1' element={<CoursDetails />} />
-        <Route path='course_1/modules' element={<Modules />} />
-        <Route path='course_1/modules/levels' element={<Level />} />
+        <Route path='course_1/modules' element={<Modules />} >
+        <Route path='quality' element={<Quality />} />
+        
+        </Route>
+        <Route path='course_1/modules/quality/levels' element={<Level />} />
       </Route>
       <Route path='dashboard' element={<AdminPage />} />
     </Routes>
