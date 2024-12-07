@@ -62,10 +62,10 @@ const ModulePage = () => {
   return (
     <div className="h-screen">
 
-        <div className="mb-8">
+        <div className="">
           <StudentNavBar />
         </div>
-      <div className="m-3 scale-95">
+      <div className=" scale-95">
 
       <div className="flex justify-between gap-5">
 
@@ -79,8 +79,8 @@ const ModulePage = () => {
                   className="w-full h-[454.85px] object-cover rounded-lg"
                 />
                 
-                <div className="mt-5 flex justify-start gap-28 items-center">
-                  <p className="p-4 bg-[#EFEFF2] rounded-3xl">Development</p>
+                <div className="mt-5 flex justify-start gap-20 items-center">
+                  <p className="p-2 bg-[#EFEFF2] rounded-3xl">Development</p>
                   <div className="flex gap-2">
                     <img
                       src="/calendar-icon.png"
@@ -93,7 +93,7 @@ const ModulePage = () => {
                     <img src="/cap-icon.png" className="w-[32px] h-[32px] " alt="" />
                     <p className="text-[#7F7E97] text-sm">2350 Students enrolled</p>
                   </div>  
-                  <div className="flex gap-2">
+                  <div className="flex ">
                     <p className="text-[#7F7E97]">⭐(4.8 reviews)</p>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const ModulePage = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-5 sticky top-10 ">
+          <div className="flex flex-col gap-5  w-[350px] sticky top-10 ">
 
             <div  >
               <PaymentCard />

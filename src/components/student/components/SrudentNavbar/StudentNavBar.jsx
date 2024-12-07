@@ -89,15 +89,6 @@ const StudentNavBar = () => {
             </Link>
           )}
 
-          {window.location.pathname === "/student/home" && (
-            <Link
-              to="/"
-              className="bg-yellow-500 font-poppins hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Logout
-            </Link>
-          )}
-
           <Link to="/student/dashboard">
             <img src="/avatar.png" alt="Avatar" className="h-10 w-10 rounded-full" />
           </Link>

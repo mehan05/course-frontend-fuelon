@@ -1,20 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import ProgressBar from '../../components/Progressbar';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ProgressBar from "../../components/Progressbar";
 
 const LevelForm = () => {
+  const [toogleFeedback, setToogleFeedback] = useState(false);
+
   return (
     <div>
-      <div className='m-4 sm:m-5'>
+      <div className="m-4 sm:m-5">
         <ProgressBar precentage={100} />
       </div>
-      
 
       <div className="flex flex-col items-start sm:p-6 md:p-8 min-h-screen">
-        <div className=''> 
-          <div className="flex flex-col items-start w-full max-w-4xl mx-auto mb-4 md:mb-8 ">
-            <h1 className="text-2xl  sm:text-3xl md:text-4xl font-bold mb-2">Level</h1>
-            <span className="text-gray-400 text-sm sm:text-base">Add your level here...</span>
+        <div>
+          <div className="flex flex-col items-start w-full max-w-4xl mx-auto mb-4 md:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+              Level
+            </h1>
+            <span className="text-gray-400 text-sm sm:text-base">
+              Add your level here...
+            </span>
           </div>
         </div>
 
@@ -51,36 +56,51 @@ const LevelForm = () => {
             </div>
 
             <div className="flex flex-col mb-5">
-            <label className="text-gray-800 font-semibold text-sm sm:text-base mb-1">
-                <span className="text-red-500">*</span> Upload your quizes here
-              </label>          <div className="flex items-center border-2 border-violet-500 border-dashed rounded-md p-2 w-full">
-              <label htmlFor={`quiz-upload`} className="flex-1 cursor-pointer">
-                <div className="flex justify-center items-center">
-                  <input
-                    type="file"
-                    id={`quiz-upload`}
-                    className="hidden"
-                  />
-                  <img src="/galleryimg.png" alt="upload" className="max-h-32 md:max-h-48" />
-                </div>
-                Click to upload your quiz
+              <label className="text-gray-800 font-semibold text-sm sm:text-base mb-1">
+                <span className="text-red-500">*</span> Upload your quizzes here
               </label>
+              <div className="flex items-center border-2 border-violet-500 border-dashed rounded-md p-2 w-full">
+                <label htmlFor={`quiz-upload`} className="flex-1 cursor-pointer">
+                  <div className="flex justify-center items-center">
+                    <input type="file" id={`quiz-upload`} className="hidden" />
+                    <img
+                      src="/galleryimg.png"
+                      alt="upload"
+                      className="max-h-32 md:max-h-48"
+                    />
+                  </div>
+                  Click to upload your quiz
+                </label>
+              </div>
             </div>
-          </div>
           </form>
         </div>
 
-        
-
         <div className="fixed bottom-4 right-4">
-          <Link
-            to="levels"
+          <button
+            onClick={() => setToogleFeedback(true)}
             className="bg-[#5072F5] px-4 py-2 text-center text-white rounded-lg font-semibold w-[150px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 transition duration-300"
           >
             Next
-          </Link>
+          </button>
         </div>
       </div>
+
+      {toogleFeedback && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+            <button
+              onClick={() => setToogleFeedback(false)}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+            >
+              ✖
+            </button>
+            <div className="p-4">
+              <h2 className="text-lg font-semibold mb-4">Feedback Form</h2>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

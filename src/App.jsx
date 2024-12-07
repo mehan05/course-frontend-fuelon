@@ -11,6 +11,7 @@ import Landing from './components/common/landing/landing';
 import { useContext, useEffect } from 'react';
 import MyContext from './context/context';
 import axios from 'axios';
+import EnrolledCourse from './components/student/Dashboard/EnrolledCourse/EnrolledCourse';
 
 function App() {
   const { courses, setCourses } = useContext(MyContext);
@@ -46,6 +47,7 @@ function App() {
         <Route path='FeedBackCard' element={<FeedBackCard/>} />
         <Route path='coursecards' element={<CourseCards/>} />
         <Route path='landing' element={<Landing/>} />
+        <Route path='trainee/feecback' element={<FeedBackCard/>}/>
       </Routes>
     </div>
   );

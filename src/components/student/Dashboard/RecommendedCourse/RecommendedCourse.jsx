@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const CourseCard = ({ title }) => {
     return (
-      <div className="border-2 border-gray-300 rounded-lg p-3  sm:w-[100px] md:w-[150px] lg:w-[200px] bg-white shadow-lg flex flex-col items-start">
+      <div className=" scale-inherit border-2 border-gray-300 rounded-lg p-3  sm:w-[100px] md:w-[150px] lg:w-[200px] bg-white shadow-lg flex flex-col items-start">
         <div className="w-full flex justify-center">
           <img
             src="/courseprogress.png"

@@ -16,7 +16,6 @@ const FeedBackCard = () => {
 
   return (
     <div className="w-full max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg border-2 border-dashed border-blue-200 font-poppins sm:max-w-sm">
-      {/* Emoji Selection */}
       <div className="flex flex-wrap justify-center gap-4 mb-6">
         {emojis.map(({ id, src, alt }) => (
           <button
@@ -33,12 +32,9 @@ const FeedBackCard = () => {
         ))}
       </div>
 
-      {/* Heading */}
       <h2 className="text-center text-lg font-semibold mb-4">
         Tell Us What Can Be Improved?
       </h2>
-
-      {/* Tag Selection */}
       <div className="flex flex-wrap justify-center gap-3 mb-4">
         {tags.map((tag, index) => (
           <button
@@ -55,7 +51,6 @@ const FeedBackCard = () => {
         ))}
       </div>
 
-      {/* Textarea for Suggestions */}
       <textarea
         className="w-full p-3 border rounded-lg mb-4 text-sm text-gray-700 resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none"
         placeholder="Other suggestions..."
@@ -63,7 +58,6 @@ const FeedBackCard = () => {
         onChange={(e) => setSuggestion(e.target.value)}
       />
 
-      {/* Submit Button */}
       <button className="w-full py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:outline-none">
         Send
       </button>

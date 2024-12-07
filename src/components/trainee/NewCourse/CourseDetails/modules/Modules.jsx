@@ -72,23 +72,7 @@ const Modules = () => {
           
         </div>
       </div>
-      {
-            toogleFeedback && (
-              <div className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex items-center justify-center">
-                <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-                    <FeedBackCard/>
-                  <div className="flex justify-center mt-4">
-                    <button
-                      className="bg-violet-500 text-white px-4 py-2 rounded-lg mr-2"
-                      onClick={() => setToogleFeedback(false)}
-                    >
-                      Close
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )
-          }
+      
     </div>
   );
 };
