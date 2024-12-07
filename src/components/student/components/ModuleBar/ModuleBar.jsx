@@ -13,9 +13,9 @@ const ModuleDescription = ({ module }) => {
         onClick={toggleModule}
         className="flex justify-between items-center cursor-pointer bg-gray-100 p-4 rounded-t-lg"
       >
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center  gap-20  space-x-4">
           <p className="font-semibold text-lg">Module:{module.moduleNumber}</p>
-          <p className="text-gray-700">{module.title}</p>
+          <p className="font-semibold">{module.title}</p>
         </div>
         <p className="text-[#5751E1] text-lg font-bold">${module.price}</p>
         <div className="">

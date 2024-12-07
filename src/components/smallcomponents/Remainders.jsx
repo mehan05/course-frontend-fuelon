@@ -1,6 +1,6 @@
 import React from "react";
 
-const Reminders = () => {
+const Reminders = ({handleClosePopup}) => {
   return (
     <div
       className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6 font-poppins"
@@ -11,14 +11,17 @@ const Reminders = () => {
         boxSizing: "border-box",
       }}
     >
-      {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-bold text-gray-800 leading-tight">Reminders</h2>
-
+        <button
+              onClick={handleClosePopup}
+              className="absolute top-2 right-2 text-red-500 hover:text-red-700 text-xl font-bold mr-2"
+            >
+              X
+            </button>
       
       </div>
 
-      {/* Reminder Items */}
       {[
         {
           title: "UI UX",
@@ -65,7 +68,6 @@ const Reminders = () => {
           key={index}
           className={`flex items-center ${item.bgColor} p-4 rounded-lg border ${item.borderColor} mb-4 last:mb-0`}
         >
-          {/* Icon */}
           <div className="mr-4 ml-6">
             <img
               src={item.imgSrc}
@@ -73,7 +75,6 @@ const Reminders = () => {
               className="w-8 h-8 sm:w-6 sm:h-6"
             />
           </div>
-          {/* Text Content */}
           <div className="flex-grow">
             <h3
               className={`font-semibold text-base leading-tight ${item.textColor}`}
@@ -84,7 +85,6 @@ const Reminders = () => {
               {item.description}
             </p>
           </div>
-          {/* Time or Register Button */}
           {item.time === "Register" ? (
             <button
               className={`font-bold text-sm ${item.textColor} hover:underline focus:outline-none`}

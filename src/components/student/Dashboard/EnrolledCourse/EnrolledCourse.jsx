@@ -15,7 +15,7 @@ const EnrolledCourse = () => {
           <div className="flex w-full gap-5 shadow-xl">
             <div className="flex-shrink-0  p-2">
               <img
-                src="/courseImage.png"
+                src="/courseImage.png"  
                 alt="image"
                 className="w-full h-full object-cover"
               />
@@ -32,7 +32,7 @@ const EnrolledCourse = () => {
                     </div>
             </div>
 
-            <div className="flex justify-end items-center self-center">
+            <div className="flex pr-10 items-center self-center">
               <Link to={`/course/${id}`} className="text-blue-500 hover:underline">
                 More
               </Link>

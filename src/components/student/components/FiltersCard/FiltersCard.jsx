@@ -31,12 +31,15 @@ const FiltersCard = () => {
           </label>
         ))}
       </div>
-      <button 
-        className="text-blue-500 mt-4  focus:outline-none text-lg" 
-        onClick={() => setShowMore(!showMore)}
-      >
-        {showMore ? "Show Less -" : "Show More +"}
-      </button>
+      <div className='flex justify-center'>
+
+        <button 
+          className="text-blue-500 mt-4  focus:outline-none text-lg" 
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? "Show Less -" : "Show More +"}
+        </button>
+      </div>
     </div>
   );
 };

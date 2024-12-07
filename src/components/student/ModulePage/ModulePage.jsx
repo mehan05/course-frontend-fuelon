@@ -60,12 +60,12 @@ const ModulePage = () => {
   
 ];
   return (
-    <div>
+    <div className="h-screen">
 
-        <div className="mb-8">
+        <div className="">
           <StudentNavBar />
         </div>
-      <div className="m-3">
+      <div className=" scale-95">
 
       <div className="flex justify-between gap-5">
 
@@ -79,8 +79,8 @@ const ModulePage = () => {
                   className="w-full h-[454.85px] object-cover rounded-lg"
                 />
                 
-                <div className="mt-5 flex justify-start gap-28 items-center">
-                  <p className="p-4 bg-[#EFEFF2] rounded-3xl">Development</p>
+                <div className="mt-5 flex justify-start gap-20 items-center">
+                  <p className="p-2 bg-[#EFEFF2] rounded-3xl">Development</p>
                   <div className="flex gap-2">
                     <img
                       src="/calendar-icon.png"
@@ -90,10 +90,10 @@ const ModulePage = () => {
                     <p className="text-[#7F7E97]">24/07/2024</p>
                   </div>
                   <div className="flex gap-2">
-                    <img src="/cap-icon.png" className="w-[32px] h-[32px]" alt="" />
-                    <p className="text-[#7F7E97]">2350 Students enrolled</p>
-                  </div>
-                  <div className="flex gap-2">
+                    <img src="/cap-icon.png" className="w-[32px] h-[32px] " alt="" />
+                    <p className="text-[#7F7E97] text-sm">2350 Students enrolled</p>
+                  </div>  
+                  <div className="flex ">
                     <p className="text-[#7F7E97]">⭐(4.8 reviews)</p>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const ModulePage = () => {
 
                 <div className="mt-3 ml-10">
                   <h4 className="text-[#161439] font-semibold text-lg mb-4">Description:</h4>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 mb-10">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut blanditiis modi ipsa libero fuga, minima dignissimos earum ipsam quaerat odio officiis, saepe incidunt tempora consequuntur eveniet dolores similique. Sapiente, perspiciatis!
                     Labore eius nam quae, eveniet saepe eaque? Repellat excepturi unde voluptatum dolore esse sequi aperiam qui numquam doloremque deleniti, provident ipsum placeat minima magnam eveniet itaque, illo error porro distinctio.
                   </p>
@@ -128,9 +128,9 @@ const ModulePage = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5  w-[350px] sticky top-10 ">
 
-            <div >
+            <div  >
               <PaymentCard />
             </div>
             <div >

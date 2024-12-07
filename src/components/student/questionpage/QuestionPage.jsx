@@ -23,7 +23,7 @@ const QuestionPage = () => {
   ]);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const initialTime = localStorage.getItem("timeLeft") || 15 * 60; // 15 minutes in seconds
+  const initialTime = localStorage.getItem("timeLeft") || 15 * 60; 
   const [timeLeft, setTimeLeft] = useState(Number(initialTime));
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -31,7 +31,7 @@ const QuestionPage = () => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev > 0) {
-          localStorage.setItem("timeLeft", prev - 1); // Save remaining time in localStorage
+          localStorage.setItem("timeLeft", prev - 1); 
           return prev - 1;
         } else {
           clearInterval(timer);
@@ -45,7 +45,7 @@ const QuestionPage = () => {
 
   useEffect(() => {
     return () => {
-      localStorage.removeItem("timeLeft"); // Clear timeLeft from localStorage on component unmount or submit
+      localStorage.removeItem("timeLeft");
     };
   }, []);
 
@@ -67,15 +67,14 @@ const QuestionPage = () => {
     <div>
         <StudentNavBar />
       <div className="bg-white  flex flex-col items-center justify-center font-sans  mr-5 ml-5 " style={{ fontFamily: 'Poppins, sans-serif' }}>
-        {/* Navbar */}
 
         <header className="w-full  px-6 py-4 flex flex-col items-start text-gray-800">
           <div className="flex items-center space-x-2">
             <Link to="/student/quiz" >
               
-              <span className="text-4xl m-3   font-bold">←</span>
+              <span className="text-2xl   font-bold">←</span>
             </Link>
-            <h1 className="text-xl font-bold">Assess Yourself</h1>
+            <h1 className="text-xl  font-bold">Assess Yourself</h1>
           </div>
           <p className="text-gray-500 mt-2">Complete the test now</p>
         </header>
@@ -104,12 +103,12 @@ const QuestionPage = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </div>  
 
-          <div className="flex-1 p-4 border border-gray-300 rounded-lg ml-8 relative">
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">Question No {currentQuestion + 1}:</h2>
+          <div className="flex-1 p-4 border border-gray-300 rounded-lg ml-8 relative flex flex-col justify-center ">
+            <h2 className="text-lg font-semibold text-gray-800 mb-2 ">Question No {currentQuestion + 1}:</h2>
             <p className="text-lg font-medium text-gray-900 mb-4">{questions[currentQuestion].question}</p>
-            <div className="space-y-3 mb-4">
+            <div className="space-y-3 mb-4  ">
               {questions[currentQuestion].options.map((option, index) => (
                 <label key={index} className="flex items-center space-x-3 cursor-pointer">
                   <input
@@ -124,7 +123,6 @@ const QuestionPage = () => {
               ))}
             </div>
 
-            {/* Navigation arrows */}
             <div className="absolute top-2 right-2 flex space-x-6">
               <img
                 src="/roundedleftarrow.png"
@@ -142,7 +140,6 @@ const QuestionPage = () => {
               />
             </div>
 
-            {/* Submit button positioned at the bottom-right corner */}
             <div className="absolute bottom-10 right-4">
               <button
                 onClick={() => {

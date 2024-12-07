@@ -39,6 +39,7 @@ try{
           <Route path='mycourses' element={<Course/>} />
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='mycourses/modules' element={<ModulePage/>} />
+          <Route path='/home/modules' element={<ModulePage/>} />
         </Routes>
     </div>
   )

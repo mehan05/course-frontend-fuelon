@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import ModuleBar from './components/ModuleBar';
 import { Link } from 'react-router-dom';
 import ProgressBar from '../../components/Progressbar';
+import FeedBackCard from '../../../../smallcomponents/FeedBackCard';
 
 const Modules = () => {
   const [modules, setModules] = useState([]);
   const [newModuleTitle, setNewModuleTitle] = useState("");
+  const[toogleFeedback,setToogleFeedback]=useState(false);
 
-  const handleAddModule = () => {
+   const handleAddModule = () => {
     setModules([
       ...modules,
       {
@@ -15,7 +17,6 @@ const Modules = () => {
         description: "",
         cost: "",
         video: "",
-        quiz: [],
       },
     ]);
     setNewModuleTitle("");
@@ -32,8 +33,8 @@ const Modules = () => {
       <div className="mb-5">
         <ProgressBar precentage={60} />
       </div>
-      <div className="flex flex-col items-center">
-        <div className="flex flex-col items-start mb-4">
+      <div className="flex flex-col items-start">
+        <div className="flex flex-col items-center mb-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1">Modules</h1>
           <span className="text-gray-400">Add Your Modules here...</span>
         </div>
@@ -55,21 +56,23 @@ const Modules = () => {
           </div>
         </div>
         {modules.length ? (
-          <div className="w-full max-w-4xl">
+        <div className="w-full max-w-4xl mx-auto ">
             <ModuleBar modules={modules} handleModuleChange={handleModuleChange} percentage={30} />
           </div>
         ) : (
           <div></div>
         )}
-        <div className="fixed bottom-4 right-4">
+        <div className="fixed bottom-4 right-4  " onClick={()=>setToogleFeedback(true)}>
           <Link
             to="levels"
-            className="bg-violet-500 px-4 py-2 text-center text-white rounded-lg font-semibold w-[100px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 transition duration-300"
+            className="bg-[#5072F5] px-4 py-2 text-center text-white rounded-lg font-semibold w-[150px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 transition duration-300"
           >
             Next
           </Link>
+          
         </div>
       </div>
+      
     </div>
   );
 };
