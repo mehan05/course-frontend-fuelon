@@ -40,7 +40,7 @@ const MessageList = () => {
   ];
 
   return (
-    <div className="w-full max-w-md p-4 bg-white shadow-lg rounded-lg">
+    <div className="w-full  max-w-md p-4 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold text-[#161439] mb-4">Messages</h2>
       <div className="relative mb-4">
         <input

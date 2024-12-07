@@ -17,7 +17,7 @@ const AdminPage = () => {
       <div className="border-violet-500">
         <TraineeNavbar />
       </div>
-          <div className='flex justify-between'>
+          <div className='flex flex-col m-5'>
                 <div >
 
                   <div className="flex justify-start items-center mt-3">
@@ -33,21 +33,19 @@ const AdminPage = () => {
                   </div>
                   
 
-                  <div className="flex flex-wrap justify-start items-start m-5 w-full">
-                    <ChartComponents />
-                  </div>
+               
                 </div>
 
 
-                <div className='flex flex-col'>
-                    <div className='mb-5'>
-                      <MessageList/>
+               <div className='flex justify-between gap-10 w-full'>
+                    <div className='mb-5 w-1/2 '>
+                      <MessageList />
                     </div>
 
-                      <div className="mb-5">
-                        <BestSellingCourse />
-                      </div>                  
-                </div>
+                    <div className="mb-5 w-1/2">
+                      <BestSellingCourse />
+                    </div>
+            </div>
           </div>
     </div>
   );
