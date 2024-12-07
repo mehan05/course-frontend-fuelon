@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ModuleBar from './components/ModuleBar';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import ProgressBar from '../../components/Progressbar';
 import FeedBackCard from '../../../../smallcomponents/FeedBackCard';
 
@@ -33,6 +33,11 @@ const Modules = () => {
       <div className="mb-5">
         <ProgressBar precentage={60} />
       </div>
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200/70 backdrop-blur-0 z-50">
+          <div className="relative ">
+            <Outlet />
+          </div>
+        </div>
       <div className="flex flex-col items-start">
         <div className="flex flex-col items-center mb-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1">Modules</h1>
@@ -64,7 +69,7 @@ const Modules = () => {
         )}
         <div className="fixed bottom-4 right-4  " onClick={()=>setToogleFeedback(true)}>
           <Link
-            to="levels"
+            to="quality"
             className="bg-[#5072F5] px-4 py-2 text-center text-white rounded-lg font-semibold w-[150px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 transition duration-300"
           >
             Next
