@@ -88,10 +88,10 @@ function Landing() {
           </div>
         </div>
       )}
-      <div className="fixed right-5  top-40 z-10 transition-all ease-in-out duration-1000">
+      <div className="fixed right-5  top-60 z-10 transition-all transform ease-in-out duration-1000">
         {feedbackToogle && <FeedBackCard />}
       </div>
-      <div className="fixed right-5  top-[700px] z-10">
+      <div className="fixed right-5  top-[650px] z-10">
         <button onClick={() => setFeedbackToogle(!feedbackToogle)}>
           <img src="/feedback-icon.png" alt="feedback" className="h-20 w-20" />
         </button>

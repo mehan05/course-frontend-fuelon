@@ -5,35 +5,16 @@ const FeedBackCard = () => {
   const [selectedTag, setSelectedTag] = useState(null);
   const [suggestion, setSuggestion] = useState("");
 
-  const emojis = [
-    { id: 1, src: "/emoji1.png", alt: "Happy" },
-    { id: 2, src: "/emoji2.png", alt: "Angry" },
-    { id: 3, src: "/emoji3.png", alt: "Sad" },
-    { id: 4, src: "/emoji4.png", alt: "Love" },
-  ];
 
-  const tags = ["Overall Service", "Efficiency", "Payment Issue"];
+
+  const tags = ["Payment Issue", "Refund Policy", "Surprise me"];
 
   return (
     <div className="w-full max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg border-2 border-dashed border-blue-200 font-poppins sm:max-w-sm">
-      <div className="flex flex-wrap justify-center gap-4 mb-6">
-        {emojis.map(({ id, src, alt }) => (
-          <button
-            key={id}
-            onClick={() => setSelectedEmoji(id)}
-            className={`p-2 rounded-full transition-all ${
-              selectedEmoji === id
-                ? "ring-4 ring-blue-500 ring-offset-2"
-                : "hover:scale-105"
-            }`}
-          >
-            <img src={src} alt={alt} className="w-12 h-12 sm:w-10 sm:h-10" />
-          </button>
-        ))}
-      </div>
+     
 
       <h2 className="text-center text-lg font-semibold mb-4">
-        Tell Us What Can Be Improved?
+        Chat With FuelOn Chatbot
       </h2>
       <div className="flex flex-wrap justify-center gap-3 mb-4">
         {tags.map((tag, index) => (
@@ -53,7 +34,7 @@ const FeedBackCard = () => {
 
       <textarea
         className="w-full p-3 border rounded-lg mb-4 text-sm text-gray-700 resize-none focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        placeholder="Other suggestions..."
+        placeholder="May I Help You"
         value={suggestion}
         onChange={(e) => setSuggestion(e.target.value)}
       />
