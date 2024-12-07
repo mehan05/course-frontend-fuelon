@@ -21,7 +21,7 @@ const ModuleBar = ({ handleModuleChange, modules }) => {
                 className="bg-gray-300 hover:bg-violet-500 font-bold py-1 px-2 rounded-md text-black text-xl m-1"
                 onClick={() => handleToggle(index)}
               >
-                {show[index] ? <img src="/down-arrow.png" className='w-5 h-5' alt="" /> : <img src="/up-arrow.png" className='w-5 h-5' alt="" />}
+                {show[index] ? <img src="/up-arrow.png" className='w-5 h-5' alt="" /> : <img src="/down-arrow.png" className='w-5 h-5' alt="" />}
               </button>
             </div>
             <div className={`transition-opacity duration-700 ease-in-out ${show[index] ? 'opacity-100' : 'opacity-0'}`}>
