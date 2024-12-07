@@ -71,7 +71,7 @@ const ModulePage = () => {
 
           <div className="text-wrap flex flex-col  ">
             
-            <div className="flex flex-col gap-5 pl-5 max-w-[12  00px] w-[892px] ml-10">
+            <div className="flex flex-col gap-5 pl-5 max-w-[1200px] w-[892px] ml-10">
               <div className="">
                 <img
                   src="/courseImage.png"

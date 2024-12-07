@@ -80,15 +80,10 @@ function Landing() {
 
       {toggle && location.pathname.startsWith("/student") && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="relative bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-md">
-            <button
-              onClick={handleClosePopup}
-              className="absolute top-2 right-2 text-red-500 hover:text-red-700 text-xl font-bold"
-            >
-              X
-            </button>
+          <div className="relative">
+           
             <div>
-              <Reminders />
+              <Reminders handleClosePopup={handleClosePopup} />
             </div>
           </div>
         </div>
