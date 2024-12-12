@@ -2,7 +2,7 @@ import React from 'react';
 
 function ModuleForm({ handleModuleChange, index, module }) {
   return (
-    <div className="bg-gray-200 border-violet-500 border-2 shadow-md rounded-md p-4 w-full">
+    <div className="bg-gray-200 border-violet-500 border-2 shadow-md rounded-md p-4 w-full pb-8">
       <div className="space-y-4">
         
         <div className="flex gap-5">
@@ -59,10 +59,38 @@ function ModuleForm({ handleModuleChange, index, module }) {
                 />
                 <img src="/galleryimg.png" alt="upload" className="max-h-32 md:max-h-48" />
               </div>
-              Click to upload your video
+            <div className="flex-1 flex justify-center items-center">
+                    <span className="text-gray-900">              Click to upload your video
+                    </span>
+                  </div>
             </label>
           </div>
         </div>
+
+        <div className="flex gap-5 h-10 items-center">
+              <label className="text-gray-700 w-40">Quizzes:</label>
+              <label
+                htmlFor={`video-upload-${index}`}
+                className="cursor-pointer w-full"
+              >
+                <div className="flex items-center border-2 border-violet-500 border-dashed rounded-md p-4 w-full">
+                  <div className="flex-1 flex justify-center items-center">
+                    <span className="text-gray-900">Upload your quizzes here</span>
+                  </div>
+                  <div className="flex items-center">
+                    <input
+                      type="file"
+                      id={`video-upload-${index}`}
+                      className="hidden"
+                      onChange={(e) => handleModuleChange(e, index, 'video')}
+                    />
+                    <img src="/galleryimg.png" alt="upload" className="h-8 w-8" />
+                  </div>
+                </div>
+              </label>
+          </div>
+
+
 
 
       </div>
