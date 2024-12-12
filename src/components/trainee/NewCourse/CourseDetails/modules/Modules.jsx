@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ModuleBar from './components/ModuleBar';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import ProgressBar from '../../components/Progressbar';
 import FeedBackCard from '../../../../smallcomponents/FeedBackCard';
 
@@ -8,7 +8,8 @@ const Modules = () => {
   const [modules, setModules] = useState([]);
   const [newModuleTitle, setNewModuleTitle] = useState("");
   const[toogleFeedback,setToogleFeedback]=useState(false);
-
+  const location = useLocation();
+  console.log(location.pathname);
    const handleAddModule = () => {
     setModules([
       ...modules,
@@ -33,11 +34,14 @@ const Modules = () => {
       <div className="mb-5">
         <ProgressBar precentage={60} />
       </div>
+      {
+        location.pathname.endsWith("quality")&&
         <div className="absolute inset-0 flex items-center justify-center bg-gray-200/70 backdrop-blur-0 z-50">
           <div className="relative ">
             <Outlet />
           </div>
         </div>
+      }
       <div className="flex flex-col items-start">
         <div className="flex flex-col items-center mb-4">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1">Modules</h1>
