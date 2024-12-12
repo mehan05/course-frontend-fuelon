@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import  { useState,useContext } from 'react';
 import ModuleBar from './components/ModuleBar';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import ProgressBar from '../../components/Progressbar';
-import FeedBackCard from '../../../../smallcomponents/FeedBackCard';
-
+import MyContext from "../../../../../context/context";
 const Modules = () => {
   const [modules, setModules] = useState([]);
+ 
+
   const [newModuleTitle, setNewModuleTitle] = useState("");
   const[toogleFeedback,setToogleFeedback]=useState(false);
   const location = useLocation();
@@ -30,13 +31,13 @@ const Modules = () => {
   };
 
   return (
-    <div className="p-4 md:p-6 lg:p-8">
+    <div className={`p-4 md:p-6 lg:p-8 `}>
       <div className="mb-5">
         <ProgressBar precentage={60} />
       </div>
       {
         location.pathname.endsWith("quality")&&
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-200/70 backdrop-blur-0 z-50">
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-50/40  h-screen z-50">
           <div className="relative ">
             <Outlet />
           </div>

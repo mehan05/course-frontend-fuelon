@@ -4,7 +4,7 @@ const QualityPopupCard = () => {
     const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center  bg-gray-100 pt-9">
+    <div className="flex items-center justify-center pt-9">
       <div className="bg-white rounded-lg flex flex-col justify-between">
         <h2 className="text-center text-gray-600 text-[14px] font-poppins leading-[20px] pb-5">
           Before you continue we’d like to ensure that you’re satisfied with below criteria

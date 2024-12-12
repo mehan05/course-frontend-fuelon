@@ -8,8 +8,10 @@ const ContextProvider = ({children}) => {
     const[languageContext,setLanguageContext] = useState([]);
     const[PaidContext,setPaidContext] = useState([]);
     const[searchQuery,setSearchQuery] = useState("");
+    const [show,setShow] = useState(false);
+
   return (
-    <MyContext.Provider value={{courses,setCourses,searchQuery,setSearchQuery,setSelectedCategoryContext,SelectedCategoryContext,languageContext,setLanguageContext,PaidContext,setPaidContext}}>
+    <MyContext.Provider value={{show,setShow,courses,setCourses,searchQuery,setSearchQuery,setSelectedCategoryContext,SelectedCategoryContext,languageContext,setLanguageContext,PaidContext,setPaidContext}}>
         {children}
     </MyContext.Provider>
   )
