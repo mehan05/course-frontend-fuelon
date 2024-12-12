@@ -12,7 +12,7 @@ const LevelForm = () => {
         <ProgressBar precentage={100} />
       </div>
 
-      <div className="flex flex-col items-start sm:p-6 md:p-8 min-h-screen">
+      <div className="flex flex-col items-start sm:p-6 md:p-8 min-h-auto ">
         <div>
           <div className="flex flex-col items-start w-full max-w-4xl mx-auto mb-4 md:mb-8">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
@@ -56,24 +56,7 @@ const LevelForm = () => {
               </select>
             </div>
 
-            <div className="flex flex-col mb-5">
-              <label className="text-gray-800 font-semibold text-sm sm:text-base mb-1">
-                <span className="text-red-500">*</span> Upload your quizzes here
-              </label>
-              <div className="flex items-center border-2 border-violet-500 border-dashed rounded-md p-2 w-full">
-                <label htmlFor={`quiz-upload`} className="flex-1 cursor-pointer">
-                  <div className="flex justify-center items-center">
-                    <input type="file" id={`quiz-upload`} className="hidden" />
-                    <img
-                      src="/galleryimg.png"
-                      alt="upload"
-                      className="max-h-32 md:max-h-48"
-                    />
-                  </div>
-                  Click to upload your quiz
-                </label>
-              </div>
-            </div>
+           
           </form>
         </div>
 
@@ -94,9 +77,9 @@ const LevelForm = () => {
 
       {toogleFeedback && (
         <div className="fixed inset-0  flex items-center  justify-center bg-black bg-opacity-50 ">
-          <div className="relative  bg-white  rounded-xl p-0.5 shadow-lg w-full max-w-[370px] ">
+          <div className="relative  bg-white  rounded-xl p-0.5 shadow-lg w-[411px] h-[412px] ">
           
-            <div className="p-4 border-2 border-dashed border-gray-400 m-4 rounded-xl ">
+            <div className="  p-4 border-2 border-dashed border-gray-400 m-4 rounded-xl h-[380px] ">
               <h2 className="text-lg font-semibold mb-4">
                 <Animation/>
               </h2>
