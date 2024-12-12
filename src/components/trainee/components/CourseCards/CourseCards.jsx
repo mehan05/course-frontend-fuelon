@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const CourseCards = ({ course }) => {
   const location = useLocation();
-  console.log(location.pathname)
+
   return (
     <div >
       <div className="border-2 rounded-xl max-w-sm  min-h-xl  max-h-[470px]   sm:max-w-sm md:max-w-mg lg:max-w-lg xl:max-w-xl h-full p-4 hover:transition-transform hover:scale-105 hover:duration-400 flex flex-col">
@@ -49,7 +49,7 @@ const CourseCards = ({ course }) => {
             )}
 
             {
-             ( location.pathname.endsWith("mycourses") || location.pathname.endsWith("home"))&&(
+             ( location.pathname.endsWith("mycourses") || location.pathname.endsWith("home"))&&(!location.pathname.startsWith("/trainee"))&&(
                     <Link to="modules" className="mt-2 sm:mt-0">
                     <img
                       src="/enrollnow_img.png"

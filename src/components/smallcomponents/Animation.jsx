@@ -1,9 +1,15 @@
-import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Animation = () => {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <div className="flex items-center justify-center  bg-gray-100">
+        {
+          !location.pathname.endsWith('levels')?(
+
       <div className="bg-white border border-dashed border-blue-400 rounded-lg p-6 w-[90%] max-w-[320px] h-[380px] flex flex-col items-center justify-center">
+      
         <img 
           src="/animation.gif" 
           alt="Processing Animation" 
@@ -16,6 +22,16 @@ const Animation = () => {
           <p className="mt-1 text-xs font-normal">(This process typically takes 24-48 hrs)</p>
         </div>
       </div>
+          ):(
+            <div className="border-2 border-dashed p-10 pr-10">
+                <img
+                  src="/successAnimation.gif"
+                      alt="Processing Animation" 
+              className="w-[200px] h-[200px] mb-3"
+                />
+            </div>
+          )
+        }
     </div>
   );
 };

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import ProgressBar from "../../components/Progressbar";
+import Animation from "../../../../smallcomponents/Animation";
+import { useState } from "react";
 
 const LevelForm = () => {
   const [toogleFeedback, setToogleFeedback] = useState(false);
@@ -78,7 +79,12 @@ const LevelForm = () => {
 
         <div className="fixed bottom-4 right-4">
           <button
-            onClick={() => setToogleFeedback(true)}
+             onClick={() => {
+              setToogleFeedback(true)
+              setTimeout(()=>(
+                setToogleFeedback(false)
+              ),3000)
+          }}
             className="bg-[#5072F5] px-4 py-2 text-center text-white rounded-lg font-semibold w-[150px] hover:bg-white hover:border-2 hover:border-violet-500 hover:text-violet-500 transition duration-300"
           >
             Next
@@ -87,16 +93,13 @@ const LevelForm = () => {
       </div>
 
       {toogleFeedback && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
-            <button
-              onClick={() => setToogleFeedback(false)}
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
-            >
-              ✖
-            </button>
-            <div className="p-4">
-              <h2 className="text-lg font-semibold mb-4">Feedback Form</h2>
+        <div className="fixed inset-0  flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative  bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+          
+            <div className="p-4 border-2 border-dashed border-gray-600 m-4 rounded-xl ">
+              <h2 className="text-lg font-semibold mb-4">
+                <Animation/>
+              </h2>
             </div>
           </div>
         </div>
