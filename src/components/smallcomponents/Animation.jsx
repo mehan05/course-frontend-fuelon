@@ -8,7 +8,7 @@ const Animation = () => {
         {
           !location.pathname.endsWith('levels')?(
 
-      <div className="bg-white border border-dashed border-blue-400 rounded-lg p-6 w-[90%] max-w-[320px] h-[380px] flex flex-col items-center justify-center">
+      <div className="bg-white border  flex flex-col items-center justify-center">
       
         <img 
           src="/animation.gif" 

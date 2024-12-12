@@ -93,10 +93,10 @@ const LevelForm = () => {
       </div>
 
       {toogleFeedback && (
-        <div className="fixed inset-0  flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative  bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
+        <div className="fixed inset-0  flex items-center  justify-center bg-black bg-opacity-50 ">
+          <div className="relative  bg-white  rounded-xl p-0.5 shadow-lg w-full max-w-[370px] ">
           
-            <div className="p-4 border-2 border-dashed border-gray-600 m-4 rounded-xl ">
+            <div className="p-4 border-2 border-dashed border-gray-400 m-4 rounded-xl ">
               <h2 className="text-lg font-semibold mb-4">
                 <Animation/>
               </h2>

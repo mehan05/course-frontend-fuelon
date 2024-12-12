@@ -6,8 +6,8 @@ const QualityPopupCard = () => {
 
   return (
     <div className="flex items-center justify-center  bg-gray-100">
-      <div className="bg-white border border-dashed border-blue-400 rounded-lg p-6 w-[90%] max-w-[320px] h-[380px] flex flex-col justify-between">
-        <h2 className="text-center text-gray-600 text-[14px] font-poppins leading-[20px]">
+      <div className="bg-white rounded-lg flex flex-col justify-between">
+        <h2 className="text-center text-gray-600 text-[14px] font-poppins leading-[20px] pb-5">
           Before you continue we’d like to ensure that you’re satisfied with below criteria
         </h2>
         <div className="space-y-4">
