@@ -15,15 +15,15 @@ const FeedBackCard = ({ handleExpand }) => {
   return (
     <div
       className={`fixed top-0 left-0 ${
-        show ? "w-screen h-screen p-6" : "w-80 h-auto p-4"
+        show ? "w-screen h-screen p-6 bg-gray-800" : "w-80 h-auto p-4"
       } bg-white shadow-md rounded-lg border-2 border-dashed border-blue-200 font-poppins transition-all duration-500 z-50`}
     >
       <div className="flex justify-end">
         <button onClick={toggleFullscreen} className=" font-bold">
-          {show ? <img src="/condense.png" className="w-5 h-5"/> : <img src="/expand.png" className="w-5 h-5"/>}
+          {show ? <img src="/condense-white.png" className="w-8 h-8"/> : <img src="/expand.png" className="w-8 h-8"/>}
         </button>
       </div>
-      <h2 className="text-center text-lg font-semibold mb-4">
+      <h2 className={`"text-center text-lg font-semibold mb-4" ${show && "text-white text-center text-lg font-semibold mb-4 "} `}>
         Chat With FuelOn Chatbot
       </h2>
 
