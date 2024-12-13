@@ -4,7 +4,7 @@ import QualityPopupCard from '../../../smallcomponents/QualitypopupCard';
 import MyContext from '../../../../context/context';
 
 const Quality = () => {
-    const{show,setShow} = useContext(MyContext);
+    const[show,setShow] = useState(false);
     useEffect(()=>{
         setTimeout(()=>{
             setShow(true);     
