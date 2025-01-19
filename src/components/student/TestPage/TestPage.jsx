@@ -5,7 +5,7 @@ import MyContext from "../../../context/context";
 
 const TestPage = () => {
   const { courses } = useContext(MyContext);
-
+  console.log(courses);
   return (
     <div className="m-2">
       <div className="mb-8">

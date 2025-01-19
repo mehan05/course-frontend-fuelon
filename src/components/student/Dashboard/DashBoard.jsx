@@ -1,10 +1,9 @@
-import React from 'react';
 import StudentNavBar from '../components/SrudentNavbar/StudentNavBar';
 import RecommendedCourse from './RecommendedCourse/RecommendedCourse';
 import ProfileCard from './ProfileCard/ProfileCard';
 import Progress from './Progress/progress';
-import EnrolledCourse from './EnrolledCourse/EnrolledCourse';
 import ResumeCourse from './ResumeCourse/ResumeCourse';
+import EnrolledCourse from './EnrolledCourse/EnrolledCourse';
 
 const Dashboard = () => {
   return (

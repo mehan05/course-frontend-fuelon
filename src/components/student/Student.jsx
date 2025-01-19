@@ -35,7 +35,7 @@ try{
         <Routes>
           <Route path='home' element={<Landing/>} />
           <Route  path='quiz' element={<TestPage/>} />
-          <Route path='quiz/quizpage' element={<QuestionPage/>} />
+          <Route path='quiz/quizpage/:id' element={<QuestionPage/>} />
           <Route path='mycourses' element={<Course/>} />
           <Route path='dashboard' element={<Dashboard/>} />
           <Route path='mycourses/modules' element={<ModulePage/>} />

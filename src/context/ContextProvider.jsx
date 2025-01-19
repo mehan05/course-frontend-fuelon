@@ -9,9 +9,13 @@ const ContextProvider = ({children}) => {
     const[PaidContext,setPaidContext] = useState([]);
     const[searchQuery,setSearchQuery] = useState("");
     const [show,setShow] = useState(false);
+            //use the test id from backend to store the marks
+    // const[marksFromContext,setMarksFromContext] = useState([{}]);
+
+
 
   return (
-    <MyContext.Provider value={{show,setShow,courses,setCourses,searchQuery,setSearchQuery,setSelectedCategoryContext,SelectedCategoryContext,languageContext,setLanguageContext,PaidContext,setPaidContext}}>
+    <MyContext.Provider value={{show,setShow,courses,setCourses,searchQuery,setSearchQuery,setSelectedCategoryContext,SelectedCategoryContext,languageContext,setLanguageContext,PaidContext,setPaidContext,}}>
         {children}
     </MyContext.Provider>
   )

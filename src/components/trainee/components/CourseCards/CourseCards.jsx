@@ -39,7 +39,7 @@ const CourseCards = ({ course }) => {
 
         <div className="mt-4 flex flex-col  sm:flex-row justify-between items-center flex-1 ">
    
-          <Link to="quizpage">
+          <Link to={`quizpage/${course.id}`}>
             {location.pathname.endsWith("/quiz")  &&(
               <img
                 src="/start-now.png"
