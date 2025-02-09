@@ -1,12 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+/* eslint-disable no-unused-vars */
+import  { useContext, useEffect, useState } from 'react';
 import MyContext from '../../../../context/context';
 import { Link, useNavigate } from 'react-router-dom';
 import PopupCard from './components/PopupCard';
+import Videojs from '../../components/VideoPlayer/Videojs';
 
 const EnrolledCourse = () => {
   const[courseId,setCourseId] = useState("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [testWritten, setTestWritten] = useState(false);  
+  const [testWritten, setTestWritten] = useState(false); 
+  const[isVideoOpen,setisVideoOpen] = useState(false);
   const [courseState, setCourseState] = useState();
   const { courses } = useContext(MyContext);
   console.log(courses);
@@ -33,6 +36,9 @@ const EnrolledCourse = () => {
     }
   }, [courses, courseState]);
 
+  const handleCloseVideo = () => {
+    setisVideoOpen(false);
+  };
   return (
     <div className="max-h-[500px] overflow-y-auto">
       {courses.map((course, id) => (
@@ -54,22 +60,37 @@ const EnrolledCourse = () => {
             </div>
 
             <div className="flex pr-10 items-center self-center space-x-3">
-              <Link to={`/course/${id}`} className="text-blue-500 hover:scale-105  border-2 p-2 rounded-xl border-gray-400">
-                More
-              </Link>
+             
               {
                 testWritten ? (
+                  <div>
                   <Link to={`/student/quiz/quizpage/${id}`} className="">
                     <div className='text-blue-500 max-w-36 min-w-24 hover:scale-105  border-2 p-2 rounded-xl border-gray-400 flex justify-center items-center'>
-                      Take Test
+                       Test
                     </div>
                   </Link>
+                 
+                  </div>
                 ) : (
                   <div
                     className='text-red-500 max-w-36 min-w-24 hover:scale-105  border-2 p-2 rounded-xl border-gray-400 flex justify-center items-center'
                     onClick={()=>handleOpenPopup(id)}
                   >
-                    Take Test
+                     Test
+                  </div>
+                )
+
+              }
+              {
+                isVideoOpen ?(
+                                <div className="fixed inset-0 flex items-center justify-center bg-opacity-100">
+                      <div className="">
+                      <Videojs onClose={handleCloseVideo} />
+                    </div>
+                  </div>
+                ):(
+                  <div className='text-blue-500 max-w-36 min-w-24 hover:scale-105  border-2 p-2 rounded-xl border-gray-400 flex justify-center items-center'>
+                    <button onClick={()=>setisVideoOpen(true)} >Video</button>
                   </div>
                 )
               }

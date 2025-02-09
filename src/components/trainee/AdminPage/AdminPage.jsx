@@ -1,7 +1,5 @@
-import React from 'react';
 import DetailsCard from './components/DetailsCard';
 import BestSellingCourse from './components/BestSellingCourse';
-import ChartComponents from './components/ChartComponents';
 import TraineeNavbar from '../components/TraineeNavbar/TraineeNavbar';
 import MessageList from './components/MessageList';
 

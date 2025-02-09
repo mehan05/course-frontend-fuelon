@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import  { useContext, useEffect, useState } from 'react';
 import MyContext from '../../../../context/context';
 
 const LanguageFilterCard = () => {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore] = useState(false);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const { setLanguageContext } = useContext(MyContext);
 

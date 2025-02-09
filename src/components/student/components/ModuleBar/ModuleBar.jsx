@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 const ModuleDescription = ({ module }) => {
@@ -35,7 +36,7 @@ const ModuleDescription = ({ module }) => {
             </div>
 
             <div>
-                <h3 className="text-xl font-semibold">What you'll learn in this course?</h3>
+                <h3 className="text-xl font-semibold">What you will learn in this course?</h3>
                 <p className="text-gray-700 mt-2 mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>

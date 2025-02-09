@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "concurrently \"vite\" \"json-server --watch src/db/CoursesData.json --port 5000\"",
+    "build": "vite build && json-server --watch src/db/CoursesData.json --port 5000",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -20,7 +20,8 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "recharts": "^2.13.3",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "video.js": "^7.18.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
@@ -28,6 +29,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
     "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",

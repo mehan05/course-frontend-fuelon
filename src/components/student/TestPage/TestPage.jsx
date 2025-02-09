@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import StudentNavBar from "../components/SrudentNavbar/StudentNavBar";
 import CourseCards from "../../trainee/components/CourseCards/CourseCards";
 import MyContext from "../../../context/context";

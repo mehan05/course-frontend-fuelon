@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import MyContext from '../../../../context/context';
 
 const StudentNavBar = () => {
-  const { searchQuery, setSearchQuery } = useContext(MyContext);
+  const {  setSearchQuery } = useContext(MyContext);
 
   return (
     <nav className="bg-white  w-full ">

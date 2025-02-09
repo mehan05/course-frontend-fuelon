@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 
 const progressData = [
   { icon: "/progressimage1.png", title: "10", subtitle: "Course finished" },

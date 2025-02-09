@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import Animation from '../../../smallcomponents/Animation';
 import QualityPopupCard from '../../../smallcomponents/QualitypopupCard';
-import MyContext from '../../../../context/context';
 
 const Quality = () => {
     const[show,setShow] = useState(false);

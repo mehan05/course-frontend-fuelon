@@ -1,8 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect, useContext } from "react";
 import StudentNavBar from "../components/SrudentNavbar/StudentNavBar";
 import { Link, useParams } from "react-router-dom";
 import MyContext from "../../../context/context";
-import axios from "axios";
 
 const QuestionPage = () => {
   const { courses } = useContext(MyContext);

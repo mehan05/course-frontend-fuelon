@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import  { useContext, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Course from './Courses/Course'
 import Landing from '../common/landing/landing'
@@ -7,7 +7,6 @@ import TestPage from './TestPage/TestPage'
 import MyContext from '../../context/context'
 import axios from 'axios'
 import QuestionPage from './questionpage/QuestionPage'
-import EnrolledCourse from './Dashboard/EnrolledCourse/EnrolledCourse'
 import Dashboard from './Dashboard/DashBoard'
 
 const Student = () => {
